@@ -168,7 +168,7 @@
             </div>
 
 
-            <div class="col-md-3 col-lg-3 col-xs-12 " style="margin-top: 2px;" >
+            <div class="col-md-3 col-lg-3 col-xs-12" style="margin-top: 2px;" >
                 <div class="Athena_panel" >
                     <center>
                         <img id="imagem" src="img/logo.png" height="80" width="80">

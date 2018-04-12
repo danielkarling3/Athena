@@ -179,7 +179,7 @@ include './modal.php';
            
         </div>
 
-        <div style="position: absolute; bottom: 4%; width: 100%; padding-left: 80%">
+        <div class="col-sm-3 col-sm-offset-9 col-md-3 col-md-offset-9 col-lg-3 col-lg-offset-9 " style="bottom: 4%;" >
             <center>
                 <label>Desenvolvido por:<br>
                     <a style="color: black;" href="http://lattes.cnpq.br/3657386675052708">Daniel Antonio Karling</a></label>

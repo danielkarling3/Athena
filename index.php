@@ -17,11 +17,11 @@ and open the template in the editor.
     </head>
     <body class="Athena_background" >
 
-        <?php 
+        <?php
         include './cabecalho.php';
         ?>
-        
-        
+
+
         <div class="row" style="margin-top: 5%;">
             <div class="col-lg-3 col-xs-3">
 
@@ -57,7 +57,7 @@ and open the template in the editor.
 
 
 
-        <div  style="position: absolute; bottom: 10px; width: 100%; padding-left: 80%">
+        <div class="col-sm-3 col-sm-offset-9 col-md-3 col-md-offset-9 col-lg-3 col-lg-offset-9 " style="bottom: 4%;" >
             <center>
                 <label>Desenvolvido por:<br>
                     <a style="color: black;" href="http://lattes.cnpq.br/3657386675052708">Daniel Antonio Karling</a></label>
