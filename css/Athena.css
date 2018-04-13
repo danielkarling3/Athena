@@ -13,6 +13,21 @@
 
 
 }
+.Athena_background_four{
+    background-image: url(Atenas2.jpg);
+    background-size: cover; 
+   background-repeat: no-repeat;
+/*    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;*/
+    width: 100%;
+    height: 100%;
+    position:  static;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+
+}
 
 .Athena_title{
     font-family: sans-serif;
@@ -108,7 +123,7 @@
     /*    padding: 15px 32px;*/
     text-align: center;
     display: inline-block;
-    font-size: 20px;   
+    font-size: 18px;   
 }
 
 
@@ -127,9 +142,9 @@
     /*    background: -webkit-gradient(linear, left top, left bottom, from(rgba(146, 135, 187, 0.8)), to(rgba(0, 0, 0, 0.6)));*/
     background: linear-gradient(to bottom, rgba(100, 200, 256, 0.7) 0%, rgba(0, 10, 1, 0.8) 100%);
     color: white;  
-    margin-right: 5%;
-    margin-left: 12%;
-    padding-top: 5%;
+/*    margin-right: 5%;
+   margin-left: 5%;*/
+    padding-top: 10px;
     padding-bottom: 10px;
 
 }

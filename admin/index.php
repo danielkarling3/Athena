@@ -148,8 +148,8 @@
 
         <div class="row" style="margin-top: 5%;">
 
-            <div class="col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 col-xs-12">
-                <div class="Athena_login" style="margin-left: 20%; margin-right: 20%;  margin-top: 2%;" >
+            <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 col-xs-10 col-xs-offset-1">
+                <div class="Athena_login" style=" margin-top: 2%;" >
                     <center>
                         <div class="panel Athena_cabecalho" style="background-color: rgba(11,1,1,0.5);   margin-left: 15%; margin-right: 15%;">
                             <h3 >Ambiente de Administração</h3>
@@ -168,7 +168,7 @@
             </div>
 
 
-            <div class="col-md-3 col-lg-3 col-xs-12" style="margin-top: 2px;" >
+            <div class=" col-sm-6 col-sm-offset-3 col-md-2 col-md-offset-1  col-lg-2 col-lg-offset-1 col-xs-10 col-xs-offset-1" style="margin-top: 2px;" >
                 <div class="Athena_panel" >
                     <center>
                         <img id="imagem" src="img/logo.png" height="80" width="80">
@@ -193,7 +193,7 @@
 
 
     <center>
-        <div ng-controller="Controller" class="modal modal-dismiss" id="modalListarCursos">
+        <div  class="modal modal-dismiss" id="modalListarCursos">
             <div class="modal-lg bg-warning">
                 <div class="modal-content">
                     <div class="modal-header bg-warning">
