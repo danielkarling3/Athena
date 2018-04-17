@@ -88,7 +88,7 @@ include './modal.php';
                 $.ajax({
                     url: "../modal/novoUsuarioModal.php",
                 }).done(function (data) {
-                    $("#btnCadastras").hide();
+                    $("#btnCadastrar").hide();
                     $("#btnLogar").show();
                     $("#menu").html(data);
                 });
@@ -165,21 +165,30 @@ include './modal.php';
                     </center>
                 </div>
             </div>
-            <div class="col-sm-10 col-sm-offset-1 col-md-3 col-lg-2 col-xs-10 col-xs-offset-1" >
-                <br>
-                <br>
-                <center>
-                    <br>
-                    <button id="btnCadastras" class="btn btn-lg Athena_button_dark_large"  onclick="menuNovoUsuario()">CADASTRE-SE</button>
-                    <div id="btnLogar" hidden="true">
-                        <button  class="btn btn-lg Athena_button_dark_large"  onclick="atualizar()" >LOGIN</button>
-                    </div>
-                </center>
+
+            <div class=" col-sm-6 col-sm-offset-3 col-md-2 col-md-offset-1  col-lg-2 col-lg-offset-1 col-xs-10 col-xs-offset-1" style="margin-top: 20px;" >
+                <div class="Athena_panel" >
+                    <center>
+
+                        <label>Ambiente de <br>Consulta</label><br>
+                        <button id="btnCadastras" class="btn btn-lg Athena_button_submit"  onclick="window.location.href = '../index.php'">Acessar</button>
+
+                    </center>
+                </div>
             </div>
-            <br>
-            <br>
-           
         </div>
+
+        <div class="row" >
+            <center>
+                <br>
+                <button id="btnCadastrar" class="btn btn-lg Athena_button_dark_large"  onclick="menuNovoUsuario()">CADASTRE-SE</button>
+                <div id="btnLogar" hidden="true">
+                    <button  class="btn btn-lg Athena_button_dark_large"  onclick="atualizar()" >LOGIN</button>
+                </div>
+            </center>
+        </div>
+
+
 
         <div class="col-lg-4 col-lg-offset-8 col-sm-4 col-sm-offset-8 col-md-4 col-md-offset-8 col-xs-4 col-xs-offset-8 " style="bottom: 4%;" >
             <center>
