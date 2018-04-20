@@ -273,7 +273,7 @@ include_once './modal.php';
 
         <div class="row">
 
-            <div class="col col-lg-2 col-xs-2 " >
+            <div class="col col-lg-2 col-xs-2 hidden-print" >
                 <center>
                     <div class="navbar navbar-fixed-top"   style="margin-right: 80%">
 
@@ -459,7 +459,7 @@ include_once './modal.php';
             $previsaoConclusaoMeses . $strextra . " </h4>";
             ?>
         </div>
-        <button id="btnInfo" class="btn btn-lg btn-primary text-uppercase" onclick="mostrarInfo()" style="margin-left: 18%;" value="mostrar">Informações</button>
+        <button id="btnInfo" class="btn btn-lg btn-primary text-uppercase hidden-print" onclick="mostrarInfo()" style="margin-left: 18%;" value="mostrar">Informações</button>
         <br>
         <br>
 
