@@ -62,13 +62,12 @@ $fetch = listarRequisitosCodigo($idCurso);
 
 
 if ((file_exists("../ModuloEspecialista/qtdReq" . $codCurso . ".pl"))) {
-    //alterar("disciplina", array("requisitoCadastrado" => 0, "requisitada" => 0), "id_curso = '$idCurso'");
-
+   
     unlink("../ModuloEspecialista/qtdReq" . $codCurso . ".pl");
 }
 if (!empty($fetch[0]['disciplina'])) {
     $disciplinaAnterior = $fetch[0]['disciplina'];
-//alterar("disciplina", array("requisitoCadastrado" => 1), "CODIGO = '$disciplinaAnterior'");
+    alterar("disciplina", array("requisitoCadastrado" => 1), "CODIGO = '$disciplinaAnterior'");
     fwrite($fp, "\nrequisito('" . $disciplinaAnterior . "'):-\n");
     foreach ($fetch as $f) {
 
@@ -92,12 +91,12 @@ foreach ($fetch3 as $f3) {
     foreach ($fetch4 as $f4) {
         $codigo = $f4['CODIGO'];
     }
-   // echo " cadastrado sem requisito " . $f3['id_disciplina'];
+    // echo " cadastrado sem requisito " . $f3['id_disciplina'];
     fwrite($fp, "\n\nrequisito('" . $codigo . "'):-\n");
     fwrite($fp, "true.");
 
     alterar("disciplina", array("requisitoCadastrado" => 1), "CODIGO = '" . $codigo . "'");
-    //inserir("requisito", array('id_disciplina'=> $f3['id_disciplina'], 'id_requisito' => 0, 'id_curso' => $idCurso));
+    
 }
 
 //nao cadastrei

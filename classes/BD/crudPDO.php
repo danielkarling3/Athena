@@ -147,7 +147,7 @@ function listarRequisitos($idCurso, $order) {
 function listarRequisitosCodigo($idCurso) {
     $conn = DataBase::getInstance()->getDb();
 
-    $sql = "SELECT disciplina.ID as id, disciplina.CODIGO as disciplina, req.requisito  FROM (SELECT disciplina.CODIGO as requisito , requisito.id_disciplina FROM requisito JOIN disciplina ON requisito.id_requisito = disciplina.ID) as req JOIN disciplina ON req.id_disciplina = disciplina.ID WHERE disciplina.id_curso =  $idCurso";
+    $sql = "SELECT disciplina.ID as id, disciplina.CODIGO as disciplina, req.requisito FROM (SELECT disciplina.CODIGO as requisito , requisito.id_disciplina FROM requisito JOIN disciplina ON requisito.id_requisito = disciplina.ID) as req JOIN disciplina ON req.id_disciplina = disciplina.ID WHERE disciplina.id_curso = $idCurso order by disciplina";
 
     $stmt = $conn->prepare($sql);
     $stmt->execute();

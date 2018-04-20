@@ -229,17 +229,19 @@ class Recomendacao {
 
 
 //inserir categorias ainda nao cursadas na lista 
-        foreach ($nomeCategoiasCurso as $catCurso) {
-            if ((in_array($catCurso, $nomeCategorias))) {
-                
-            } else {
+        if (!(empty($nomeCategoiasCurso))) {
+            foreach ($nomeCategoiasCurso as $catCurso) {
+                if ((in_array($catCurso, $nomeCategorias))) {
+                    
+                } else {
 
-                $novaCat = new CategoriaDados($catCurso);
-                $novaCat->setMediaFinal(100);
-                $novaCat->setPercentAprovacao(100);
-                $novaCat->setQtd(0);
-                $categorias[] = $novaCat;
-                $difs[] = 0;
+                    $novaCat = new CategoriaDados($catCurso);
+                    $novaCat->setMediaFinal(100);
+                    $novaCat->setPercentAprovacao(100);
+                    $novaCat->setQtd(0);
+                    $categorias[] = $novaCat;
+                    $difs[] = 0;
+                }
             }
         }
 

@@ -15,11 +15,11 @@ foreach ($fetch as $f) {
 }
 deletar("requisito", "id_curso = $idCurso");
 alterar("disciplina", array("requisitoCadastrado" => 0, "requisitada" => 0), "id_curso = '$idCurso'");
-if ((file_exists("../jar/req" . $codCurso . ".pl"))) {
+if ((file_exists("../ModuloEspecialista/req" . $codCurso . ".pl"))) {
 
 
-    $sucesso = unlink("../jar/req" . $codCurso . ".pl");
-    unlink("../jar/qtdReq" . $codCurso . ".pl");
+    $sucesso = unlink("../ModuloEspecialista/req" . $codCurso . ".pl");
+    unlink("../ModuloEspecialista/qtdReq" . $codCurso . ".pl");
     if ($sucesso) {
 
 

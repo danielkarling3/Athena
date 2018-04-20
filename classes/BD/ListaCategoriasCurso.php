@@ -26,9 +26,10 @@ class ListaCategoriasCurso {
             $cat = $f["categoria"];
             $this->categoriasCurso[] = new CategoriaDados($cat);
         }
-
-        foreach ($this->categoriasCurso as $cat) {
-            $this->nomeCategorias[] = $cat->getNome() . "";
+        if (!(empty($this->categoriasCurso))) {
+            foreach ($this->categoriasCurso as $cat) {
+                $this->nomeCategorias[] = $cat->getNome() . "";
+            }
         }
     }
 
