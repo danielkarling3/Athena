@@ -58,7 +58,8 @@ class Curso {
         
         
     }
-            
+     
+    //fucao antiga
     function buscarPorGRR($grr) {
 
         $fetch = selecionarWHERE("aproveitamento JOIN curso ON aproveitamento.id_curso = curso.id", array('curso.id', 'curso.codigo', 'curso.nome', 'curso.semanas', 'curso.id_periodo'), "MATR_ALUNO= '$grr' LIMIT 1");
@@ -73,7 +74,22 @@ class Curso {
         
         $this->buscaHorasTotal($f["id"]);
     }
+    
+    function buscaCursoPorId($idCurso){
+         $fetch = selecionarWHERE("curso", array('id', 'codigo', 'nome', 'semanas', 'id_periodo'), "id = $idCurso LIMIT 1");
 
+        foreach ($fetch as $f) {
+            $this->id = $f["id"];
+            $this->codigo = $f["codigo"];
+            $this->nome = $f["nome"];
+            $this->semanas = $f["semanas"];
+            $this->idPeriodo = $f["id_periodo"];
+        }
+        
+        $this->buscaHorasTotal($f["id"]);
+        
+    }
+            
     function setNome($nome) {
         $this->nome = $nome;
     }

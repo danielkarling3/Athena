@@ -20,7 +20,7 @@ class ListaCategoriasDados {
     public $nomeCategorias;
     public $qtdDiscCursadas;
 
-    public function __construct($grr) {
+    public function __construct($grr, $idCurso) {
 
         try {
             $conn = DataBase::getInstance()->getDb();
@@ -31,7 +31,7 @@ SELECT a.perc, a.media, a.categoria, b.qtd FROM
  JOIN 
 
 (
-SELECT categoria , COUNT(disciplina.categoria) as qtd FROM disciplina JOIN aproveitamento ON disciplina.CODIGO = aproveitamento.COD_ATIV_CURRIC WHERE aproveitamento.MATR_ALUNO = '$grr' GROUP BY disciplina.categoria) as b ON a.categoria = b.categoria;";
+SELECT categoria , COUNT(disciplina.categoria) as qtd FROM disciplina JOIN aproveitamento ON disciplina.CODIGO = aproveitamento.COD_ATIV_CURRIC WHERE aproveitamento.MATR_ALUNO = '$grr' AND aproveitamento.id_curso = $idCurso GROUP BY disciplina.categoria) as b ON a.categoria = b.categoria;";
 
 
             $stmt = $conn->prepare($sql);

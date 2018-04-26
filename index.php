@@ -1,3 +1,7 @@
+<?php
+    require_once './classes/BD/crudPDO.php';
+    $fetch =  selecionarWHERE("curso", array('nome', 'id'), "visivel = 1");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +16,7 @@
 
         <?php
         include './cabecalho.php';
+
         ?>
 
 
@@ -27,9 +32,20 @@
                         </div>
                         <form  method="post" action="recommender.php">
                             <h4 class="text-uppercase" >GRR</h4>
-                            <input style="color: black;" name="grr"  class="text-center"  type="text" id="grr" value = ""><br>
+                            <input style="color: black;" name="grr"  class="text-center"  type="text" id="grr" value = "GRR"><br>
 
-                            <br><input type="submit" name="submit" class="btn Athena_button_submit " value="Consultar">
+                            <br>
+                            <h4 class="text-uppercase" >CURSO</h4>
+                            <select name="idCurso" class="text-uppercase" style='color: black;'>
+                                <?php
+                                        foreach ($fetch as $curso) {
+                                            echo "<option class='text-uppercase' style='color: black;' name='idCurso' value='".$curso['id']."'>".$curso['nome']."</option>";
+                                        }
+                                ?>
+                            </select>
+                            <br>
+                            <br>
+                            <input type="submit" name="submit" class="btn Athena_button_submit " value="Consultar">
                         </form>
                         <br>
                         <br>

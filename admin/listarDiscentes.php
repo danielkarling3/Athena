@@ -17,9 +17,10 @@ if ($existe == 0) {
     die();
 }
 $id_curso = "";
-$fetch = selecionarWHERE("curso", array("id"), "codigo = '" . $codCurso . "' limit 1;");
+$fetch = selecionarWHERE("curso", array("id", "visivel"), "codigo = '" . $codCurso . "' limit 1;");
 foreach ($fetch as $f) {
     $id_curso = $f["id"];
+    $visivel_curso = $f["visivel"];
 }
 $listDisciplinas = new ListarDisciplinas($id_curso);
 $fetch = selecionarWHERE("curso", array("nome"), "id= '$id_curso' LIMIT 1");
@@ -157,10 +158,18 @@ foreach ($fetch as $f) {
                     data: {idUsuario: <?php echo $_SESSION["usuario"]['id'] ?>}
                 }).done(function (data) {
 
-                   $("#corpoModalListaCursos").html(data);
+                    $("#corpoModalListaCursos").html(data);
 
                 });
-                
+
+                if (<?php echo $visivel_curso; ?> === 1) {
+                    $("#btnDesativar").html("Desativar o Curso");
+                    $("#btnDesativar").addClass("bg-danger");
+                } else {
+                    $("#btnDesativar").html("Ativar o Curso");
+                    $("#btnDesativar").removeClass("bg-danger");
+                    $("#btnDesativar").addClass("bg-success");
+                }
             }
 
 
@@ -169,7 +178,7 @@ foreach ($fetch as $f) {
                 $.ajax({
                     type: 'POST',
                     url: "../ajax/listarUsuariosAjax.php",
-                    data: {idCurso: idCurso, idUsuario: <?php echo $_SESSION["usuario"]['id']?>}
+                    data: {idCurso: idCurso, idUsuario: <?php echo $_SESSION["usuario"]['id'] ?>}
 
                 }).done(function (data) {
                     $("#corpoModalListaCursos").html(data);
@@ -181,7 +190,7 @@ foreach ($fetch as $f) {
 
 
             function  finalizarCompartilhamento(idCurso, idConvidado) {
-                
+
                 $.ajax({
                     type: 'POST',
                     url: "compartilhar.php",
@@ -203,7 +212,7 @@ foreach ($fetch as $f) {
 
                 } else if (num === 2) {
                     document.getElementById('imagem').src = 'img/curso3.png';
-                    
+
                 } else if (num === 3) {
                     document.getElementById('imagem').src = 'img/historico.png';
 
@@ -258,6 +267,45 @@ foreach ($fetch as $f) {
                 });
 
             }
+            function desativar() {
+                if ($("#btnDesativar").html() === "Desativar o Curso") {
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "../ajax/desativarCurso.php",
+                        data: {idCurso: <?php echo $id_curso; ?>, inserir: 0}
+
+                    }).done(function (data) {
+                        if (data === "erro") {
+                            alert("Erro");
+                        } else {
+                            $("#btnDesativar").removeClass("bg-danger");
+                            $("#btnDesativar").addClass("bg-success");
+                            $("#btnDesativar").html("Ativar o Curso");
+                        }
+                    });
+                } else {
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "../ajax/desativarCurso.php",
+                        data: {idCurso: <?php echo $id_curso; ?>, inserir: 1}
+
+                    }).done(function (data) {
+                        if (data === "erro") {
+                            alert("Erro");
+                        } else {
+
+                            $("#btnDesativar").removeClass("bg-success");
+                            $("#btnDesativar").addClass("bg-danger");
+                            $("#btnDesativar").html("Desativar o Curso");
+                        }
+                    });
+                }
+
+            }
+
+
 
 
         </script>
@@ -275,11 +323,11 @@ foreach ($fetch as $f) {
 
                             <div id ="menu" class="nav navbar-left ">
                                 <ul class="nav navbar-left" style="margin-top: 10px; margin-left: 10px;" >
-                                    
+
                                     <li>
                                         <img id="imagem" src="img/logo.png" height="140px" width="135px">
                                     </li>
-                                    
+
                                     <li>
                                         <label class="text-uppercase">Pesquisar: </label> 
                                         <br><input type="text" class="text-warning"name="nomeDigitado" id="nomeDigitado" onkeyup="pesquisar()"/>
@@ -300,7 +348,7 @@ foreach ($fetch as $f) {
                                                     <li><button onmouseover="alterarImagem(6)" onmouseout="alterarImagem(0)" class="dropdown-toggle btn-primary" onclick="novaDisciplinaModal()">Nova Disciplina</button></li>
                                                     <br>
                                                     <li><button onmouseover="alterarImagem(7)" onmouseout="alterarImagem(0)" class="dropdown-toggle btn-primary" type="button" onclick="window.location.href = '../requisitos/cadastrarRequisitos.php?idCurso=<?php echo $id_curso; ?>&codigo=<?php echo $codCurso; ?>&nomeCurso=<?php echo $nomeCurso; ?>'"> Cadastrar Requisitos</button></li>
-                                                    
+
                                                 </div>
                                             </center>
                                         </ul>
@@ -325,6 +373,9 @@ foreach ($fetch as $f) {
                                     <li onmouseover="alterarImagem(3)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" class="btn-primary  btn-lg" onclick="inserirHistorico()"> Inserir Histórico</button></li>
 
                                     <li onmouseover="alterarImagem(5)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" class="bg-primary  btn-lg" onclick="window.location.href = 'listarDisciplinas.php?codigo=<?php echo $codCurso; ?>'">Listar Disciplinas</button></li>
+                                    <!--                                    ocultar curso-->
+                                    <li onmouseover="alterarImagem(2)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" id="btnDesativar" class="btn-lg"  onclick="desativar()">Desativar o Curso</button></li>
+                                    <!--                                    ocultar curso-->                                    
 
                                     <li onmouseover="alterarImagem(4)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" class="bg-info  btn-lg" onclick="window.location.href = 'index.php'"> Voltar</button></li>
                                     <br>
@@ -379,28 +430,28 @@ foreach ($fetch as $f) {
         <div class="modal fade" id="modalListarCursos">
 
             <center>
-            <div class="modal-lg Athena_modal">
-                <div class="modal-content">
-                    <div class="modal-header Athena_modal">
-                        <button type="button" class="close" data-dismiss="modal" onclick="atualizar()"><span>×</span></button>
-                        <h4 class="modal-title text-info Athena_modal">Selecionar Curso</h4>
-                    </div>
-                    <div id="corpoModalListaCursos" class="modal-body Athena_modal">
-                        <center>
+                <div class="modal-lg Athena_modal">
+                    <div class="modal-content">
+                        <div class="modal-header Athena_modal">
+                            <button type="button" class="close" data-dismiss="modal" onclick="atualizar()"><span>×</span></button>
+                            <h4 class="modal-title text-info Athena_modal">Selecionar Curso</h4>
+                        </div>
+                        <div id="corpoModalListaCursos" class="modal-body Athena_modal">
+                            <center>
 
 
-                           
 
-                        </center>
-                    </div>
-                    <div class="Athena_modal_fother">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="atualizar()">Fechar</button>
-                        <br>
-                        <br>
+
+                            </center>
+                        </div>
+                        <div class="Athena_modal_fother">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="atualizar()">Fechar</button>
+                            <br>
+                            <br>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </center>
+            </center>
         </div>
 
 
@@ -421,7 +472,7 @@ foreach ($fetch as $f) {
                                     <tr  class = "Athena_modal ">
                                         <th>Código</th><th>Alterar</th><th>Nome</th><th>Categoria</th><th>Carga Horária</th><th>Horários</th>              
                                     </tr> 
-                                   
+
 
                                 </table>  
                             </center>

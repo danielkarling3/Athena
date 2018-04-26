@@ -14,9 +14,10 @@ if ($existe == 0) {
     die();
 }
 $id_curso = "";
-$fetch = selecionarWHERE("curso", array("id"), "codigo = '" . $codCurso . "' limit 1;");
+$fetch = selecionarWHERE("curso", array("id", "visivel"), "codigo = '" . $codCurso . "' limit 1;");
 foreach ($fetch as $f) {
     $id_curso = $f["id"];
+    $visivel_curso = $f["visivel"];
 }
 $listDisciplinas = new ListarDisciplinas($id_curso);
 $fetch = selecionarWHERE("curso", array("nome"), "id= '$id_curso' LIMIT 1");
@@ -37,7 +38,7 @@ foreach ($fetch as $f) {
         <script src="../js/bootstrap.min.js"></script>
         <script src="../js/angular.min.js"></script>
         <script type="text/javascript">
-           
+
             $(document).ready(function () {
 
                 $.ajax({
@@ -237,9 +238,18 @@ foreach ($fetch as $f) {
                     data: {idUsuario: <?php echo $_SESSION["usuario"]['id'] ?>}
                 }).done(function (data) {
 
-                   $("#corpoModalListaCursos").html(data);
+                    $("#corpoModalListaCursos").html(data);
 
                 });
+
+                if (<?php echo $visivel_curso; ?> === 1) {
+                    $("#btnDesativar").html("Desativar o Curso");
+                    $("#btnDesativar").addClass("bg-danger");
+                } else {
+                    $("#btnDesativar").html("Ativar o Curso");
+                    $("#btnDesativar").removeClass("bg-danger");
+                    $("#btnDesativar").addClass("bg-success");
+                }
             }
             function inserirHistorico() {
 
@@ -299,7 +309,7 @@ foreach ($fetch as $f) {
                 }).done(function (data) {
                     $("#corpoModalListaCursos").html(data);
                     //$("#modal").modal('show');
-                   
+
 
                 });
 
@@ -384,6 +394,44 @@ foreach ($fetch as $f) {
 
             }
 
+            function desativar() {
+                if ($("#btnDesativar").html() === "Desativar o Curso") {
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "../ajax/desativarCurso.php",
+                        data: {idCurso: <?php echo $id_curso; ?>, inserir: 0}
+
+                    }).done(function (data) {
+                        if (data === "erro") {
+                            alert("Erro");
+                        } else {
+                            $("#btnDesativar").removeClass("bg-danger");
+                            $("#btnDesativar").addClass("bg-success");
+                            $("#btnDesativar").html("Ativar o Curso");
+                        }
+                    });
+                } else {
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "../ajax/desativarCurso.php",
+                        data: {idCurso: <?php echo $id_curso; ?>, inserir: 1}
+
+                    }).done(function (data) {
+                        if (data === "erro") {
+                            alert("Erro");
+                        } else {
+
+                            $("#btnDesativar").removeClass("bg-success");
+                            $("#btnDesativar").addClass("bg-danger");
+                            $("#btnDesativar").html("Desativar o Curso");
+                        }
+                    });
+                }
+
+            }
+
 
         </script>
 
@@ -448,8 +496,9 @@ foreach ($fetch as $f) {
                                     <li onmouseover="alterarImagem(3)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" class="btn-primary  btn-lg" onclick="inserirHistorico()"> Inserir Histórico</button></li>
 
                                     <li onmouseover="alterarImagem(5)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" class="bg-primary  btn-lg" onclick="window.location.href = 'listarDiscentes.php?codigo=<?php echo $codCurso; ?>'">Listar Discentes</button></li>
-
-
+                                    <!--                                    ocultar curso-->
+                                    <li onmouseover="alterarImagem(2)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" id="btnDesativar" class="btn-lg"  onclick="desativar()">Desativar o Curso</button></li>
+                                    <!--                                    ocultar curso-->                                    
                                     <li onmouseover="alterarImagem(4)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" class="bg-info  btn-lg" onclick="window.location.href = 'index.php'"> Voltar</button></li>
 
 
@@ -494,7 +543,7 @@ foreach ($fetch as $f) {
     </body>
 
 
-   
+
 
 
     <div class="modal fade" id="modalListarCursos">
@@ -510,7 +559,7 @@ foreach ($fetch as $f) {
                         <center>
 
 
-                           
+
 
                         </center>
                     </div>

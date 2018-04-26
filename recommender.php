@@ -148,7 +148,7 @@ include_once './modal.php';
                         var nameHoras = listaColisao[i] + "horas";
                         //console.log(nameImport);
                         var idHoras = $(document.getElementsByName(nameHoras)).attr("id");
-                        //console.log(idImport);
+                        console.log(idHoras);
                         
                         
                         $("#" + idHoras).addClass("hidden-print");
@@ -263,8 +263,9 @@ include_once './modal.php';
     </head>
     <?php
     $grr = $_POST["grr"];
+    $idCurso = $_POST["idCurso"];
     require_once './Recomendacao.php';
-    $recomendacao = new Recomendacao($grr);
+    $recomendacao = new Recomendacao($grr, $idCurso);
 
     $recomendacao->start();
     ?>
@@ -285,7 +286,7 @@ include_once './modal.php';
                                     <li>
                                         <img id="imagem" src="img/logoAthena.png" height="140px" width="135px">
                                     </li>
-                                    <li style="margin-top: 10px;"> <div id='horasTotais '>
+                                    <li style="margin-top: 10px;"> <div id='horasTotais'>
                                             <label style='width: 180px; 'class='panel panel-primary bg-info'> ESTIMATIVA DE<br>
                                                 HORAS DE DEDICAÇÃO <br> SEMANAL</label>
                                         </div>

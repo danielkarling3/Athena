@@ -13,6 +13,7 @@ require_once './classes/Dificuldades.php';
 class Recomendacao {
 
     private $grr = "";
+    private $idCurso;
     private $recomendacaoFinal = array();
     private $listaDificuldade = array();
     private $mensagem = "";
@@ -22,8 +23,9 @@ class Recomendacao {
     private $cargaTotalCurso = 0;
     private $anosCursados = 0;
 
-    function __construct($grr) {
+    function __construct($grr, $idCurso) {
         $this->grr = $grr;
+        $this->idCurso = $idCurso;
         $this->horasCursadas();
     }
 
@@ -198,7 +200,7 @@ class Recomendacao {
 //funcao que inicia processo de recomendacao do objeto
     public function start() {
 
-        $existe = numLinhasSelecionarWHERE("aproveitamento", array("ID"), "MATR_ALUNO = '$this->grr'");
+        $existe = numLinhasSelecionarWHERE("aproveitamento", array("ID"), "MATR_ALUNO = '$this->grr' AND id_curso = $this->idCurso");
         if ($existe == 0) {
 
             echo "<script>alert('GRR não encontrado');</script>";
@@ -207,10 +209,15 @@ class Recomendacao {
         }
 
         $curso = new Curso();
-        $curso->buscarPorGRR($this->grr);
+        //antigo
+        //$curso->buscarPorGRR($this->grr);
+        
+        //substituido por esta funcao
+        $curso->buscaCursoPorId($this->idCurso);
+        
+        
         $this->cargaTotalCurso = $curso->getHorasTotal();
-
-        $listaCategoriasDados = new ListaCategoriasDados($this->grr);
+        $listaCategoriasDados = new ListaCategoriasDados($this->grr, $this->idCurso);
         $categorias = $listaCategoriasDados->getCategorias();
 
         $listaCategoriasCurso = new ListaCategoriasCurso($curso->getCodigo());
