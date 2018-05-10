@@ -1,7 +1,13 @@
 <?php
+
 require_once '../classes/BD/crudPDO.php';
 
 $codigo = $_POST['codigo'];
+
+$fetchDisciplina = selecionarWHERE("disciplina", array('NOME', 'TOTAL_CARGA_HORARIA'), "CODIGO = '$codigo' LIMIT 1");
+
+
+
 
 $sql = "SELECT disciplina.NOME, disciplina.CODIGO FROM (SELECT requisito.id_disciplina, requisito.id_requisito FROM disciplina JOIN requisito ON disciplina.ID = requisito.id_requisito WHERE disciplina.CODIGO = '$codigo') as t1 JOIN disciplina ON t1.id_disciplina = disciplina.ID";
 $conn = DataBase::getInstance()->getDb();
@@ -31,6 +37,10 @@ foreach ($fetch as $f) {
     . "</tr>";
 }
 echo "</tbody>";
-echo "</table>";
+echo "</table><br><br>";
+
+foreach ($fetchDisciplina as $disc) {
+    echo "<label class='text-primary'>Carga Horária Total da Disciplina:  " . $disc['TOTAL_CARGA_HORARIA'] . " horas</label>";
+}
 
 

@@ -227,7 +227,7 @@ include_once './modal.php';
                     url: "modal/coRequisitos.php",
                     data: {codigo: cod}
                 }).done(function (data) {
-                    $("#cabecalhoModal").html("<center><h3 class='text-primary'>Pré-requisito de:</h3></center>");
+                    $("#cabecalhoModal").html("<center><h3 class='text-primary'>Pré-requisito de: "+cod+"</h3></center>");
                     $("#corpoModal").html(data);
 
 
@@ -274,7 +274,7 @@ include_once './modal.php';
 
         <div class="row">
 
-            <div class="col col-lg-2 col-xs-2 hidden-print" >
+            <div class="col col-lg-2 col-xs-3 col-sm-3 col-md-3 hidden-print" >
                 <center>
                     <div class="navbar navbar-fixed-top"   style="margin-right: 80%">
 
@@ -306,7 +306,7 @@ include_once './modal.php';
                     </div>
                 </center>
             </div>
-            <div class="col col-lg-10 col-xs-10">
+            <div class="col col-lg-10 col-xs-9 col-sm-9 col-md-9">
                 <table class="table ">
                     <thead>
                         <tr class="text-center">
@@ -314,7 +314,7 @@ include_once './modal.php';
                             <th style="vertical-align:middle" class="text-uppercase text-primary"> Disciplina </th>
                             <th style="vertical-align:middle"  class="text-uppercase text-primary hidden-print"> Escolher </th>
                             <th style="vertical-align:middle"  class="text-uppercase text-primary"> Recomendação</th>
-                            <th class="text-uppercase text-primary"> Horas de Dedicação Semanal </th>
+                            <th class="text-uppercase text-primary"> Horas de Dedicação Semanal Extraclasse</th>
                             <th style="vertical-align:middle"   class="text-uppercase text-primary hidden-print"> Horários </th>
                             <th class="text-uppercase text-primary hidden-print"> Colisão de Horários </th>
                         </tr>
