@@ -28,14 +28,14 @@ $fetch2 = selecionarWhere('disciplina', array('categoria'), "id_curso = $idCurso
 <script type="text/javascript">
 
     function inputNovaCategoriaAlterar() {
-        $("#divSelectCategoriaALT").hide();
-        $("#divNovaCategoriaALT").show();
+        $("#divSelectCategoriaALT").hide(400);
+        $("#divNovaCategoriaALT").show(400);
 
 
     }
     function selecionarCategoriaAlterar() {
-        $("#divSelectCategoriaALT").show();
-        $("#divNovaCategoriaALT").hide();
+        $("#divSelectCategoriaALT").show(400);
+        $("#divNovaCategoriaALT").hide(400);
         $("#categoriaDiscALT").val("");
     }
 

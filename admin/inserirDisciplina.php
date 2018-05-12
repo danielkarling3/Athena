@@ -26,16 +26,18 @@ $categoria = $_POST["categoria"];
 $ch = $_POST["ch"];
 $idCurso = $_POST["idCurso"];
 $ativa = 1;
-    
 
 
+$num = numLinhasSelecionarWHERE("disciplina", array('ID'), "CODIGO = '$codigo' AND id_curso = $idCurso");
 
+if ($num > 0) {
+    print "Código duplicado";
+} else {
 
-if (inserir("disciplina", array("CODIGO" => $codigo, "NOME" => $nome, "categoria" => $categoria, "TOTAL_CARGA_HORARIA" => $ch, "id_curso" => $idCurso , "requisitoCadastrado" => 0, "ativa" => $ativa))){
-    print 1;
-    
-}else{
-    print "erro na inserção";
-    
+    if (inserir("disciplina", array("CODIGO" => $codigo, "NOME" => $nome, "categoria" => $categoria, "TOTAL_CARGA_HORARIA" => $ch, "id_curso" => $idCurso, "requisitoCadastrado" => 0, "ativa" => $ativa))) {
+        print "sucesso";
+    } else {
+        print "erro na inserção";
+    }
 }
 

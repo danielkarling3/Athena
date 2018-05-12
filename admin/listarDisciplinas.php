@@ -131,14 +131,14 @@ foreach ($fetch as $f) {
             }
 
             function inputNovaCategoria() {
-                $("#divSelectCategoria").hide();
-                $("#divNovaCategoria").show();
+                $("#divSelectCategoria").hide(400);
+                $("#divNovaCategoria").show(400);
 
 
             }
             function selecionarCategoria() {
-                $("#divSelectCategoria").show();
-                $("#divNovaCategoria").hide();
+                $("#divSelectCategoria").show(400);
+                $("#divNovaCategoria").hide(400);
                 $("#categoriaD").val("");
 
 
@@ -170,7 +170,7 @@ foreach ($fetch as $f) {
                         url: "inserirDisciplina.php",
                         data: {nome: nome, codigo: codigo, ch: ch, categoria: categoria, idCurso: idCurso},
                     }).done(function (data) {
-                        if (data != 1) {
+                        if (data !== "sucesso") {
                             alert(data);
                         }
                         atualizar();

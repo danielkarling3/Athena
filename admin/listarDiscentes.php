@@ -305,8 +305,71 @@ foreach ($fetch as $f) {
 
             }
 
+            function admin() {
+                $("#loginAdmin").show(500);
+                $("#btnAdmin").hide(600);
 
+            }
+            function logarAdmin() {
+                var user = $('#ADM').val();
+                var senha = $('#senhaADM').val();
+                $.ajax({
+                    type: 'POST',
+                    url: "verificarLoginADM.php",
+                    data: {user: user, senha: senha}
+                }).done(function (data) {
+                    if (data !== "sucesso") {
+                        alert('você não possui acesso ' + user);
+                        $("#loginAdmin").hide(600);
+                        $('#ADM').val('');
+                        $('#senhaADM').val('');
+                    } else {
+                        alert("Bem vindo, administrador do Sistema Athena ");
+                        $("#loginAdmin").hide(300);
+                        $("#listaDisciplinas").hide(300);
 
+                        $("#deletarHistoricos").show(300);
+
+                    }
+
+                });
+            }
+
+            function deletarHistoricos() {
+                $.ajax({
+                    type: 'POST',
+                    url: "../ajax/deletarHistoricos.php",
+                    data: {idCurso: <?php echo $id_curso; ?>}
+                }).done(function (data) {
+                    alert(data);
+                    $("#deletarHistoricos").hide(300);
+                    atualizar();
+
+                });
+            }
+            function deletarCurso() {
+
+                $("#corpoModal").html("<h4>Deseja Realmente Deletar Todas as Informações do Curso?</h4><br><center><button class='btn btn-danger' onclick='confirmarDeletarCurso();'>SIM</button></center>");
+
+                $('#modal').modal('show');
+            }
+
+            function confirmarDeletarCurso() {
+
+                $.ajax({
+                    type: 'POST',
+                    url: "../ajax/deletarCurso.php",
+                    data: {idCurso: <?php echo $id_curso; ?>}
+                }).done(function (data) {
+                    alert(data);
+                    if (data === 'sucesso') {
+                        $('#modal').modal('hide');
+                        location.href="index.php";
+                    }
+
+                });
+
+            }
 
         </script>
 
@@ -392,6 +455,36 @@ foreach ($fetch as $f) {
 
             <div  class="col-lg-10">
                 <br><br><br>
+                <div style="margin-left: 90%; padding-right: 2px; padding-top: 2px;">
+                    <button id="btnAdmin" onclick="admin()" class="btn btn-sm btn-default">Área Restrita</button>
+                </div>
+                <br>
+                <br>
+                <center>
+                    <div id="loginAdmin" class="panel panel-primary" hidden="true">
+                        <br>
+                        ADMINISTRADOR:<br><input style="color: black;"  class="text-center" type="text" id="ADM"/><br>
+                        <br>
+                        SENHA:<br><input style="color: black;"  class="text-center" type="password" id="senhaADM" /><br>
+                        <br>
+                        <button class="btn btn-primary" onclick="logarAdmin()">OK</button>
+                        <br>
+                        <br>
+                    </div>
+                    <div id="deletarHistoricos" hidden="true">
+                        <label>Deseja deletar o histórico de todos os alunos?</label>
+                        <button class="btn btn-default" onclick="deletarHistoricos()">
+                            Deletar Históricos
+                        </button>
+                        <br>
+                        <label>Deseja deletar o Curso e Todas as Informações?</label>
+                        <button class="btn btn-default" onclick="deletarCurso()">
+                            Deletar Todo o Curso
+                        </button>
+
+                    </div>
+                </center>
+                <br>
                 <div id="listaDisciplinas" >
 
 

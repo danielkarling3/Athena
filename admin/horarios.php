@@ -63,7 +63,8 @@ foreach ($horarios as $h) {
 
     }
     function admin() {
-        $("#loginAdmin").show();
+        $("#loginAdmin").show(500);
+        $("#btnAdmin").hide(600);
 
     }
     function logarAdmin() {
@@ -76,16 +77,16 @@ foreach ($horarios as $h) {
         }).done(function (data) {
             if (data !== "sucesso") {
                 alert('você não possui acesso ' + user);
-                $("#loginAdmin").hide();
+                $("#loginAdmin").hide(600);
                 $('#ADM').val('');
                 $('#senhaADM').val('');
             } else {
                 alert("Bem vindo, administrador do Sistema Athena ");
-                $("#loginAdmin").hide();
-                $("#horarioDisciplina").hide();
-                 $("#novo").hide();
-                $("#deletarHorario").show();
-                $("#lista").hide();
+                $("#loginAdmin").hide(300);
+                $("#horarioDisciplina").hide(300);
+                 $("#novo").hide(300);
+                $("#deletarHorario").show(300);
+                $("#lista").hide(300);
                 $.ajax({
                     type: 'POST',
                     url: "../ajax/listarHorariosDeletar.php"
@@ -126,14 +127,17 @@ foreach ($horarios as $h) {
 <body class="Athena_background_two">
 <center>
     <br>
-    <div style="margin-left: 90%; padding-right: 2px; padding-top: 2px;"><button id="ajudaRequisito" onclick="admin()" class="btn btn-sm btn-danger">ADMIN</button></div>
+    <div style="margin-left: 90%; padding-right: 2px; padding-top: 2px;"><button id="btnAdmin" onclick="admin()" class="btn btn-sm btn-default">Área Restrita</button></div>
     <br>
-    <div id="loginAdmin" hidden="true">
-        ADMIN:<br><input style="color: black;"  class="text-center" type="text" id="ADM"/><br>
+    <div id="loginAdmin" class="panel panel-primary" hidden="true">
+        <br>
+        ADMINISTRADOR:<br><input style="color: black;"  class="text-center" type="text" id="ADM"/><br>
         <br>
         SENHA:<br><input style="color: black;"  class="text-center" type="password" id="senhaADM" /><br>
         <br>
         <button class="btn btn-primary" onclick="logarAdmin()">OK</button>
+        <br>
+        <br>
     </div>
     <div id="deletarHorario" hidden="true">
 

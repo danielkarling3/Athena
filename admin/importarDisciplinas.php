@@ -9,12 +9,13 @@ foreach ($fetch as $f) {
     
     inserir("disciplina", array('CODIGO'=>$f['CODIGO'],'NOME'=>$f['NOME'],'categoria'=>$f['categoria'],'curso'=>$nomeCopia,'TOTAL_CARGA_HORARIA'=>$f['TOTAL_CARGA_HORARIA'],'requisitoCadastrado'=>0,'requisitada'=>0,'ativa'=>$f['ativa'], 'id_curso'=>$idCopia));
     
-    echo " - ";
-    print $f['CODIGO'];
-    echo " - ";
-    print $f['NOME'];
-    
+   
 }
+
+
+
+
+echo "Disciplinas Importadas";
 
 //LEMBRAR DE COLOCAR 0 EM REQUISITOS CADASTRADOS E REQUISITADA
 //COLOCAR O ID DA COPIA

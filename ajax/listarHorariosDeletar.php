@@ -25,5 +25,5 @@ foreach ($listaHorarios as $horario) {
         $class = $arrayClass[$i];
     }
     echo "<label class='$class'  id='idHorario'>" . $horario->getDia() . " - " . $horario->getHora() . "</label>"
-    . "<button onclick='apagar(" . $horario->getId() . ")'>Apagar</button><br>";
+    . "<button style='margin-left: 5px;' class='btn btn-default btn-sm' onclick='apagar(" . $horario->getId() . ")'>Apagar</button><br>";
 }

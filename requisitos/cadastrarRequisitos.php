@@ -143,7 +143,7 @@ include_once '../modal.php';
             }
             function mostrarRequisitos() {
                 if ($("#btnMostrar").val() === 'MOSTRAR') {
-                    $("#requisitos").show();
+                    $("#requisitos").show(500);
                     $("#titulo").show();
                     $("#btnMostrar").val('OCULTAR');
                     //$("#btnMostrar").html('OCULTAR');
@@ -153,13 +153,13 @@ include_once '../modal.php';
                     // $("#divRequisitos").removeClass();
                     //$("#divRequisitos").addClass("col-lg-6");
                 } else {
-                    $("#requisitos").hide();
+                    $("#requisitos").hide(500);
                     $("#titulo").hide();
                     $("#btnMostrar").val('MOSTRAR');
                     //$("#btnMostrar").html('LISTA DE REQUISITOS');
                     //$("#formulario").removeClass();
                     //$("#formulario").addClass("col-lg-8");
-                    $("#formulario").show();
+                    $("#formulario").show(500);
                     //$("#divRequisitos").removeClass();
                     //$("#divRequisitos").addClass("col-lg-2");
                 }
