@@ -62,6 +62,62 @@ foreach ($horarios as $h) {
         }
 
     }
+    function admin() {
+        $("#loginAdmin").show();
+
+    }
+    function logarAdmin() {
+        var user = $('#ADM').val();
+        var senha = $('#senhaADM').val();
+        $.ajax({
+            type: 'POST',
+            url: "verificarLoginADM.php",
+            data: {user: user, senha: senha}
+        }).done(function (data) {
+            if (data !== "sucesso") {
+                alert('você não possui acesso ' + user);
+                $("#loginAdmin").hide();
+                $('#ADM').val('');
+                $('#senhaADM').val('');
+            } else {
+                alert("Bem vindo, administrador do Sistema Athena ");
+                $("#loginAdmin").hide();
+                $("#horarioDisciplina").hide();
+                 $("#novo").hide();
+                $("#deletarHorario").show();
+                $("#lista").hide();
+                $.ajax({
+                    type: 'POST',
+                    url: "../ajax/listarHorariosDeletar.php"
+                }).done(function (data2) {
+                    $("#deletarHorario").html(data2);
+
+                });
+            }
+
+        });
+    }
+    function apagar(id) {
+        $.ajax({
+            type: 'POST',
+            url: "apagarHorario.php",
+            data: {id: id}
+        }).done(function (data) {
+
+            if (data !== "sucesso") {
+                alert(data);
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: "../ajax/listarHorariosDeletar.php"
+                }).done(function (data2) {
+                    $("#deletarHorario").html(data2);
+                });
+
+            }
+        });
+    }
+
 
 
 
@@ -70,7 +126,21 @@ foreach ($horarios as $h) {
 <body class="Athena_background_two">
 <center>
     <br>
-    <div class="panel panel-primary" style="margin-left: 15%; margin-right: 15%;">
+    <div style="margin-left: 90%; padding-right: 2px; padding-top: 2px;"><button id="ajudaRequisito" onclick="admin()" class="btn btn-sm btn-danger">ADMIN</button></div>
+    <br>
+    <div id="loginAdmin" hidden="true">
+        ADMIN:<br><input style="color: black;"  class="text-center" type="text" id="ADM"/><br>
+        <br>
+        SENHA:<br><input style="color: black;"  class="text-center" type="password" id="senhaADM" /><br>
+        <br>
+        <button class="btn btn-primary" onclick="logarAdmin()">OK</button>
+    </div>
+    <div id="deletarHorario" hidden="true">
+
+
+    </div>
+
+    <div id="horarioDisciplina" class="panel panel-primary" style="margin-left: 15%; margin-right: 15%;">
         <h4>
             <?php echo $hora; ?>
         </h4>
@@ -99,7 +169,7 @@ foreach ($horarios as $h) {
         <input type="submit" name="submit" class="btn btn-lg Athena_button_dark_large" value="Cadastrar">
     </form>
     <br>
-    <button class="btn btn-md Athena_button_submit" onclick="novoHorario()">NOVO HORÁRIO</button>
+    <button id="novo" class="btn btn-md Athena_button_submit" onclick="novoHorario()">NOVO HORÁRIO</button>
 
     <button class="btn btn-md Athena_button_book" type="button" onclick="window.location.href = 'listarDisciplinas.php?codigo=<?php echo $codCurso; ?>'"> Voltar</button>
 </center>

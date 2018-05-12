@@ -403,7 +403,7 @@ foreach ($fetch as $f) {
                 }
 
             }
-            
+
             function alterarImagem(num) {
                 verificarLogado();
                 if (num === 1) {
@@ -411,7 +411,7 @@ foreach ($fetch as $f) {
 
                 } else if (num === 2) {
                     document.getElementById('imagem').src = 'img/curso3.png';
-                    
+
                 } else if (num === 3) {
                     document.getElementById('imagem').src = 'img/historico.png';
 
@@ -429,11 +429,31 @@ foreach ($fetch as $f) {
 
                 } else if (num === 0) {
                     document.getElementById('imagem').src = 'img/logo.png';
-                    
+
 
                 }
             }
-           
+            
+            
+            function duplicarCurso() {
+                $.ajax({
+                    type: 'POST',
+                    url: "../modal/duplicarCurso.php",
+                    data: {idCurso: <?php echo $id_curso; ?>}
+
+                }).done(function (data) {
+                    
+
+                    $('#modal').modal('show');
+                    $("#corpoModal").html(data);
+
+
+
+                });
+
+
+            }
+            
 
 
         </script>
@@ -491,6 +511,8 @@ foreach ($fetch as $f) {
                                                 <li onmouseover="alterarImagem(2)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" class="dropdown-toggle btn-primary" data-toggle="modal" data-target="#modalListarCursos">Listar Cursos</button></li>
 
                                                 <li onmouseover="alterarImagem(2)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" class="dropdown-toggle btn-primary" onclick="listaCompartilhado()"> Compartilhado</button></li>
+
+                                                <li onmouseover="alterarImagem(2)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" class="dropdown-toggle btn-primary" onclick="duplicarCurso()"> Criar Cópia</button></li>
                                             </center>
                                         </ul>
                                     </li>

@@ -1,6 +1,6 @@
 <?php
 require_once '../classes/BD/crudPDO.php';
-$fetch = selecionarWHERE("horario", array('dia'), " 1 GROUP BY dia ORDER BY FIELD(dia, 'Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta') ASC, dia ASC");
+$fetch = selecionarWHERE("horario", array('dia'), " 1 GROUP BY dia ORDER BY FIELD(dia, 'Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sábado') ASC, dia ASC");
 ?>
 <script type="text/javascript">
     function addHorario() {
@@ -19,6 +19,7 @@ $fetch = selecionarWHERE("horario", array('dia'), " 1 GROUP BY dia ORDER BY FIEL
         });
 
     }
+    
 </script>
 
 <center>
