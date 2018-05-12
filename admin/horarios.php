@@ -28,6 +28,7 @@ foreach ($horarios as $h) {
         }).done(function (data) {
             $("#idHorarios").html(data);
 
+
         });
     });
 
@@ -53,6 +54,14 @@ foreach ($horarios as $h) {
         });
         $('#modal').modal('show');
     }
+    function mostraAjuda(i) {
+        if (i === 1) {
+            $("#ajuda").html("<h5>Segure CTRL para selecionar mais de um horário<h5>");
+        } else {
+            $("#ajuda").html("<h5><br></h5>");
+        }
+
+    }
 
 
 
@@ -74,8 +83,11 @@ foreach ($horarios as $h) {
         <h4>Horários</h4>
 
         <h5>Os horários já cadastrados serão apagados</h5>
+        <div id="ajuda">
+            <h5><br></h5>
+        </div>
         <br>
-        <select  id="idHorarios" class="panel panel-primary" style="padding-left: 3%; padding-right: 3%;" name="idHorario[]" size="15" multiple >
+        <select onmousemove="mostraAjuda(1)" onmouseout="mostraAjuda(0)" id="idHorarios" class="panel panel-primary" style="padding-left: 3%; padding-right: 3%;" name="idHorario[]" size="15" multiple >
 
             <!--                ajax-->
 

@@ -129,7 +129,15 @@
 
                 }
             }
-
+            function info(i){
+                if(i === 1){
+                    $("#info").html("<h5>Cadastre um novo curso</h5>");
+                }else if(i === 2){
+                    $("#info").html("<h5>Gerencie seus cursos já cadastrados</h5>");
+                }else{
+                    $("#info").html("<h5><br></h5>");
+                }
+            }
 
         </script>
 
@@ -156,11 +164,12 @@
                         </div>
 
 
-                        <button onmouseover="alterarImagem(2)" onmouseout="alterarImagem(4)" class="btn Athena_button_submit" onclick="novoCurso()">Cadastrar Curso</button>
+                        <button onmouseover="alterarImagem(2); info(1)"   onmouseout="alterarImagem(4); info(0)" class="btn Athena_button_submit" onclick="novoCurso()">Cadastrar Curso</button>
                         <br><br>
 
-                        <button onmouseover="alterarImagem(2)" onmouseout="alterarImagem(4)" class="btn Athena_button_submit" data-toggle="modal" onmouseover="verificarLogado()" data-target="#modalListarCursos">Visualizar Curso</button>
+                        <button onmouseover="alterarImagem(2); info(2)" onmouseout="alterarImagem(4); info(0)" class="btn Athena_button_submit" data-toggle="modal" onmouseover="verificarLogado()" data-target="#modalListarCursos">Visualizar Curso</button>
                         <br>
+                        <div id="info" class="text-uppercase"><h5><br></h5></div>
                         <br>
 
                     </center>

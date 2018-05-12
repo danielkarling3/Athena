@@ -21,7 +21,7 @@ $fetch = selecionarWhere('disciplina', array('categoria'), "id_curso = $idCurso 
     <br>
 <!--    </div>-->
     <div class="panel panel-primary Athena_modal"style="margin-left: 25%; margin-right: 25%;">
-        <label>CATEGORIA</label>
+        <label>CATEGORIA</label><button onclick="alert('Categorias são como temáticas: em um curso as diferentes categorias dividem as disciplinas por semelhanças nos conteúdos.');" class="btn btn-sm btn-link">?</button>
         <br>
 
 

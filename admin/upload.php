@@ -27,7 +27,7 @@ if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $uploadfile)) {
             //verifica primeiro item do cabecalho do CSV
             if (($row == 1) && ($data[0] != "NOME DO ALUNO") && ($data[1] != "MATRICULA DO ALUNO") && ($data[20] != "SEXO")) {
 
-                echo "<script>alert('Arquivo Inválido!');</script>";
+                echo "<script>alert('Arquivo Inválido! Por favor, selecione um arquivo no formato CSV');</script>";
 
                 print "<script type = 'text/javascript'> location.href = './listarDisciplinas.php?codigo=" . $codCurso . "' </script>";
                 die();

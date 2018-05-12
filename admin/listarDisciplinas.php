@@ -332,34 +332,6 @@ foreach ($fetch as $f) {
 
             }
 
-            function alterarImagem(num) {
-                verificarLogado();
-                if (num === 1) {
-                    document.getElementById('imagem').src = 'img/nova.png';
-
-                } else if (num === 2) {
-                    document.getElementById('imagem').src = 'img/curso3.png';
-
-                } else if (num === 3) {
-                    document.getElementById('imagem').src = 'img/historico.png';
-
-                } else if (num === 4) {
-                    document.getElementById('imagem').src = 'img/voltar.png';
-
-                } else if (num === 5) {
-                    document.getElementById('imagem').src = 'img/aluno2.png';
-
-                } else if (num === 6) {
-                    document.getElementById('imagem').src = 'img/nova.png';
-
-                } else if (num === 7) {
-                    document.getElementById('imagem').src = 'img/nova.png';
-
-                } else if (num === 0) {
-                    document.getElementById('imagem').src = 'img/logo.png';
-
-                }
-            }
             function listaCompartilhado() {
                 $.ajax({
                     type: 'POST',
@@ -431,6 +403,37 @@ foreach ($fetch as $f) {
                 }
 
             }
+            
+            function alterarImagem(num) {
+                verificarLogado();
+                if (num === 1) {
+                    document.getElementById('imagem').src = 'img/nova.png';
+
+                } else if (num === 2) {
+                    document.getElementById('imagem').src = 'img/curso3.png';
+                    
+                } else if (num === 3) {
+                    document.getElementById('imagem').src = 'img/historico.png';
+
+                } else if (num === 4) {
+                    document.getElementById('imagem').src = 'img/voltar.png';
+
+                } else if (num === 5) {
+                    document.getElementById('imagem').src = 'img/aluno2.png';
+
+                } else if (num === 6) {
+                    document.getElementById('imagem').src = 'img/nova.png';
+
+                } else if (num === 7) {
+                    document.getElementById('imagem').src = 'img/nova.png';
+
+                } else if (num === 0) {
+                    document.getElementById('imagem').src = 'img/logo.png';
+                    
+
+                }
+            }
+           
 
 
         </script>
@@ -500,7 +503,7 @@ foreach ($fetch as $f) {
                                     <li onmouseover="alterarImagem(2)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" id="btnDesativar" class="btn-lg"  onclick="desativar()">Desativar o Curso</button></li>
                                     <!--                                    ocultar curso-->                                    
                                     <li onmouseover="alterarImagem(4)" onmouseout="alterarImagem(0)" style="margin-top: 10px;"><button type="button" class="bg-info  btn-lg" onclick="window.location.href = 'index.php'"> Voltar</button></li>
-
+                                    <li id="ajuda"></li>
 
                                     <br>
 
