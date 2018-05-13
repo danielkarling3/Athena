@@ -144,13 +144,13 @@ include_once './modal.php';
                         //console.log(nameImport);
                         var idImport = $(document.getElementsByName(nameImport)).attr("id");
                         //console.log(idImport);
-                        
+
                         var nameHoras = listaColisao[i] + "horas";
                         //console.log(nameImport);
                         var idHoras = $(document.getElementsByName(nameHoras)).attr("id");
                         console.log(idHoras);
-                        
-                        
+
+
                         $("#" + idHoras).addClass("hidden-print");
                         $("#" + idImport).addClass("hidden-print");
                         $("#" + listaColisao[i] + "nome").addClass("hidden-print");
@@ -181,7 +181,7 @@ include_once './modal.php';
 
                     //para imprimir
                     $("#" + codCodigo + "nome").removeClass("hidden-print");
-                    
+
                     $("#" + index + "horas").removeClass("hidden-print");
                     $("#" + index + "import").removeClass("hidden-print");
                     $("#" + codCodigo + "nome").addClass("alert-info");
@@ -203,7 +203,7 @@ include_once './modal.php';
 
                     //para nao imprimir
                     $("#" + codCodigo + "nome").addClass("hidden-print");
-                    
+
                     $("#" + index + "horas").addClass("hidden-print");
                     $("#" + index + "import").addClass("hidden-print");
                     $("#" + codCodigo + "nome").removeClass("alert-info");
@@ -227,7 +227,7 @@ include_once './modal.php';
                     url: "modal/coRequisitos.php",
                     data: {codigo: cod}
                 }).done(function (data) {
-                    $("#cabecalhoModal").html("<center><h3 class='text-primary'>Pré-requisito de: "+cod+"</h3></center>");
+                    $("#cabecalhoModal").html("<center><h3 class='text-primary'>" + cod + " é pré-requisito de: </h3></center>");
                     $("#corpoModal").html(data);
 
 
@@ -237,26 +237,22 @@ include_once './modal.php';
             }
 
             function modalAjuda(i) {
-
+             $("#cabecalhoModal").html("<center><h3 class='text-primary'>ATHENA</h3></center>");
                 if (i === 8) {
                     $("#modal").modal('hide');
-
                 } else {
                     var url = "modal/ajuda" + i + ".php";
-
                     $.ajax({
                         url: url
                     }).done(function (data) {
                         $("#corpoModal").html(data);
-
                     });
                     $('#modal').modal('show');
                 }
-
             }
-            function imprimir(){
+            
+            function imprimir() {
                 print();
-                
             }
 
         </script>
@@ -310,13 +306,13 @@ include_once './modal.php';
                 <table class="table ">
                     <thead>
                         <tr class="text-center">
-                            <th style="vertical-align:middle"  class="text-uppercase text-primary hidden-print"> Código </th>
-                            <th style="vertical-align:middle" class="text-uppercase text-primary"> Disciplina </th>
-                            <th style="vertical-align:middle"  class="text-uppercase text-primary hidden-print"> Escolher </th>
-                            <th style="vertical-align:middle"  class="text-uppercase text-primary"> Recomendação</th>
-                            <th class="text-uppercase text-primary"> Horas de Dedicação Semanal Extraclasse</th>
-                            <th style="vertical-align:middle"   class="text-uppercase text-primary hidden-print"> Horários </th>
-                            <th class="text-uppercase text-primary hidden-print"> Colisão de Horários </th>
+                            <th style="vertical-align:middle"  class="text-center text-uppercase text-primary hidden-print"> Código </th>
+                            <th style="vertical-align:middle" class="text-center text-uppercase text-primary"> Disciplina </th>
+                            <th style="vertical-align:middle"  class="text-center text-uppercase text-primary hidden-print"> Escolher </th>
+                            <th style="vertical-align:middle"  class="text-center text-uppercase text-primary"> Recomendação</th>
+                            <th class="text-uppercase text-center text-primary"> Horas de Dedicação Semanal Extraclasse</th>
+                            <th style="vertical-align:middle"   class="text-center text-uppercase text-primary hidden-print"> Horários </th>
+                            <th class="text-uppercase text-primary text-center hidden-print"> Colisão de Horários </th>
                         </tr>
                     </thead>
                     <tbody id="lista">
@@ -343,7 +339,7 @@ include_once './modal.php';
 
                                 <td class="hidden-print"><button name="<?php echo $nameBtnSelecionar; ?>" id="<?php echo $idBtnSelecionar; ?>" class="btn btn-sm btn-success hidden-print" onclick="selecionar(<?php echo $count; ?>, <?php echo round($h, 0); ?>)" value="somar">+</button></td>
 
-                                <td id="<?php echo $idImport ?>" name="<?php echo $c."import";?>" class="text-success hidden-print" ><?php echo round($rec->getImportancia(), 0) . "%"; ?></td>
+                                <td id="<?php echo $idImport ?>" name="<?php echo $c . "import"; ?>" class="text-success hidden-print" ><?php echo round($rec->getImportancia(), 0) . "%"; ?></td>
                                 <td id="<?php echo $idHoras; ?>" name="<?php echo $nameHoras; ?>"  class="text-success hidden-print"><?php echo round($rec->getHorasDedicacao(), 0); ?></td>
 
                                 <td class="hidden-print">
@@ -351,7 +347,7 @@ include_once './modal.php';
                                     $idButton = "btnHorarios" . $countS;
                                     $idDiv = "divHorarios" . $countS;
                                     ?>
-                                    <button id="<?php echo $idButton; ?>" onmouseover="mostrar(<?php echo $countS; ?>)"  value="MOSTRAR">
+                                    <button class="hidden-print" id="<?php echo $idButton; ?>" onmouseover="mostrar(<?php echo $countS; ?>)"  value="MOSTRAR">
                                         <img src="img/horario.png" height="35px" width="35px"/> 
                                     </button>
 
@@ -362,7 +358,10 @@ include_once './modal.php';
                                         }
                                         ?>
                                     </div>
+
+
                                 </td> 
+                               
                                 <td class="text-danger hidden-print">
                                     <?php
                                     $idButtonColisao = "btnColisao" . $countS;
@@ -502,7 +501,6 @@ include_once './modal.php';
                     <center>
 
                         <?php
-//$recomendacao->getListaDificuldade()->imprimeDificuldades();
                         $recomendacao->getListaDificuldade()->imprimeMediaAprovacao();
                         ?>
 

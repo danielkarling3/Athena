@@ -80,7 +80,7 @@ include_once '../modal.php';
                 var codDisciplina = $("#selectDisciplina").find(":selected").val();
                 var codRequisitosSelecionados = Array();
                 for (var i = 0; i < (codRequisitos.length); i = i + 1) {
-                    if (codRequisitos.options[i].selected == true) {
+                    if (codRequisitos.options[i].selected === true) {
                         codRequisitosSelecionados.push((codRequisitos[i].value));
                     }
                 }
@@ -89,6 +89,7 @@ include_once '../modal.php';
                     url: "../ajax/gravarRequisito.php",
                     data: {idCurso: <?php echo $idCurso; ?>, codRequisito: codRequisitosSelecionados, codCurso: codCurso, codDisciplina: codDisciplina}
                 }).done(function (data) {
+                   
                     atualizar();
                 });
             }
