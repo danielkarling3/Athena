@@ -306,7 +306,7 @@ foreach ($fetch as $f) {
             }
 
             function admin() {
-                $("#loginAdmin").show(500);
+                $("#divAreaRestrita").show(500);
                 $("#btnAdmin").hide(600);
 
             }
@@ -320,15 +320,18 @@ foreach ($fetch as $f) {
                 }).done(function (data) {
                     if (data !== "sucesso") {
                         alert('você não possui acesso ' + user);
-                        $("#loginAdmin").hide(600);
+                        $("#divAreaRestrita").hide(600);
                         $('#ADM').val('');
                         $('#senhaADM').val('');
+                        $("#btnAdmin").show(600);
+                        $("#divAdmin").hide(300);
+                        $("#opcoesRestritas").show(300);
                     } else {
                         alert("Bem vindo, administrador do Sistema Athena ");
-                        $("#loginAdmin").hide(300);
+                        $("#divAreaRestrita").hide(300);
                         $("#listaDisciplinas").hide(300);
 
-                        $("#deletarHistoricos").show(300);
+                        $("#divDeletarCurso").show(300);
 
                     }
 
@@ -342,14 +345,24 @@ foreach ($fetch as $f) {
                     data: {idCurso: <?php echo $id_curso; ?>}
                 }).done(function (data) {
                     alert(data);
-                    $("#deletarHistoricos").hide(300);
+                    $('#modal').modal('hide');
+                    $("#divAreaRestrita").hide(300);
+
+                    $("#btnAdmin").show(600);
                     atualizar();
 
                 });
             }
+
+            function deletarHistoricosModal() {
+
+                $("#corpoModal").html("<center><h4>Deseja Realmente Deletar Todas os Históricos dos Alunos?</h4><br><button class='btn btn-danger' onclick='deletarHistoricos();'>SIM</button></center>");
+
+                $('#modal').modal('show');
+            }
             function deletarCurso() {
 
-                $("#corpoModal").html("<h4>Deseja Realmente Deletar Todas as Informações do Curso?</h4><br><center><button class='btn btn-danger' onclick='confirmarDeletarCurso();'>SIM</button></center>");
+                $("#corpoModal").html("<center><h4>Essa Ação é Definitiva</h4><br><button class='btn btn-danger' onclick='confirmarDeletarCurso();'>CONFIRMAR</button></center>");
 
                 $('#modal').modal('show');
             }
@@ -364,11 +377,15 @@ foreach ($fetch as $f) {
                     alert(data);
                     if (data === 'sucesso') {
                         $('#modal').modal('hide');
-                        location.href="index.php";
+                        location.href = "index.php";
                     }
 
                 });
 
+            }
+            function divDeletarCurso() {
+                $("#divAdmin").show(300);
+                $("#opcoesRestritas").hide(300);
             }
 
         </script>
@@ -461,25 +478,35 @@ foreach ($fetch as $f) {
                 <br>
                 <br>
                 <center>
-                    <div id="loginAdmin" class="panel panel-primary" hidden="true">
+                    <div id="divAreaRestrita" class="panel panel-primary" hidden="true">
+
                         <br>
-                        ADMINISTRADOR:<br><input style="color: black;"  class="text-center" type="text" id="ADM"/><br>
-                        <br>
-                        SENHA:<br><input style="color: black;"  class="text-center" type="password" id="senhaADM" /><br>
-                        <br>
-                        <button class="btn btn-primary" onclick="logarAdmin()">OK</button>
-                        <br>
+                        <div id="divAdmin" hidden="true">
+                            ADMINISTRADOR:<br><input style="color: black;"  class="text-center" type="text" id="ADM"/><br>
+                            <br>
+                            SENHA:<br><input style="color: black;"  class="text-center" type="password" id="senhaADM" /><br>
+                            <br>
+                            <button class="btn btn-primary" onclick="logarAdmin()">OK</button>
+                            <br>
+                            <br>
+                        </div>
+                        <div id="opcoesRestritas">
+                            <br>
+                            <label>Deseja deletar o Curso e Todas as Informações?</label>
+                            <button class="btn btn-default" onclick="divDeletarCurso()">Deletar Todo o Curso</button>
+                            <br>
+                            <label>Deseja deletar o histórico de todos os alunos?</label>
+                            <button class="btn btn-default" onclick="deletarHistoricosModal()">
+                                Deletar Históricos
+                            </button>
+                        </div>
                         <br>
                     </div>
-                    <div id="deletarHistoricos" hidden="true">
-                        <label>Deseja deletar o histórico de todos os alunos?</label>
-                        <button class="btn btn-default" onclick="deletarHistoricos()">
-                            Deletar Históricos
-                        </button>
-                        <br>
-                        <label>Deseja deletar o Curso e Todas as Informações?</label>
+                    <div id="divDeletarCurso" hidden="true">
+
+                        <label>Deseja Deletar o Curso e Todas as Informações?</label>
                         <button class="btn btn-default" onclick="deletarCurso()">
-                            Deletar Todo o Curso
+                            Confirmar
                         </button>
 
                     </div>

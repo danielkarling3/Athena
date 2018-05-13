@@ -5,12 +5,12 @@ session_start();
 
 $usuario = $_POST['user'];
 $senha = $_POST['senha'];
-$fetch = selecionarWHERE('ADM', array('senha'), "user = '$usuario' LIMIT 1");
-foreach ($fetch as $f) {
-    if ($senha == $f['senha']) {
-        print "sucesso";
-    } else {
+$num = numLinhasSelecionarWHERE('ADM', array('senha'), "user = '$usuario' AND senha='$senha'");
 
-        print "erro";
-    }
+if ($num > 0) {
+    print "sucesso";
+} else {
+
+    print "erro";
 }
+

@@ -433,8 +433,8 @@ foreach ($fetch as $f) {
 
                 }
             }
-            
-            
+
+
             function duplicarCurso() {
                 $.ajax({
                     type: 'POST',
@@ -442,7 +442,7 @@ foreach ($fetch as $f) {
                     data: {idCurso: <?php echo $id_curso; ?>}
 
                 }).done(function (data) {
-                    
+
 
                     $('#modal').modal('show');
                     $("#corpoModal").html(data);
@@ -453,7 +453,90 @@ foreach ($fetch as $f) {
 
 
             }
-            
+
+             function admin() {
+                $("#divAreaRestrita").show(500);
+                $("#btnAdmin").hide(600);
+
+            }
+            function logarAdmin() {
+                var user = $('#ADM').val();
+                var senha = $('#senhaADM').val();
+                $.ajax({
+                    type: 'POST',
+                    url: "verificarLoginADM.php",
+                    data: {user: user, senha: senha}
+                }).done(function (data) {
+                    if (data !== "sucesso") {
+                        alert('você não possui acesso ' + user);
+                        $("#divAreaRestrita").hide(600);
+                        $('#ADM').val('');
+                        $('#senhaADM').val('');
+                        $("#btnAdmin").show(600);
+                        $("#divAdmin").hide(300);
+                        $("#opcoesRestritas").show(300);
+                    } else {
+                        alert("Bem vindo, administrador do Sistema Athena ");
+                        $("#divAreaRestrita").hide(300);
+                        $("#listaDisciplinas").hide(300);
+
+                        $("#divDeletarCurso").show(300);
+
+                    }
+
+                });
+            }
+
+            function deletarHistoricos() {
+                $.ajax({
+                    type: 'POST',
+                    url: "../ajax/deletarHistoricos.php",
+                    data: {idCurso: <?php echo $id_curso; ?>}
+                }).done(function (data) {
+                    alert(data);
+                    $('#modal').modal('hide');
+                    $("#divAreaRestrita").hide(300);
+
+                    $("#btnAdmin").show(600);
+                    atualizar();
+
+                });
+            }
+
+            function deletarHistoricosModal() {
+
+                $("#corpoModal").html("<center><h4>Deseja Realmente Deletar Todas os Históricos dos Alunos?</h4><br><button class='btn btn-danger' onclick='deletarHistoricos();'>SIM</button></center>");
+
+                $('#modal').modal('show');
+            }
+            function deletarCurso() {
+
+                $("#corpoModal").html("<center><h4>Essa Ação é Definitiva</h4><br><button class='btn btn-danger' onclick='confirmarDeletarCurso();'>CONFIRMAR</button></center>");
+
+                $('#modal').modal('show');
+            }
+
+            function confirmarDeletarCurso() {
+
+                $.ajax({
+                    type: 'POST',
+                    url: "../ajax/deletarCurso.php",
+                    data: {idCurso: <?php echo $id_curso; ?>}
+                }).done(function (data) {
+                    alert(data);
+                    if (data === 'sucesso') {
+                        $('#modal').modal('hide');
+                        location.href = "index.php";
+                    }
+
+                });
+
+            }
+            function divDeletarCurso() {
+                $("#divAdmin").show(300);
+                $("#opcoesRestritas").hide(300);
+            }
+
 
 
         </script>
@@ -541,6 +624,46 @@ foreach ($fetch as $f) {
 
             <div  class="col-lg-10 col-xs-10">
                 <br><br><br>
+                <div style="margin-left: 90%; padding-right: 2px; padding-top: 2px;">
+                    <button id="btnAdmin" onclick="admin()" class="btn btn-sm btn-default">Área Restrita</button>
+                </div>
+                <br>
+                <br>
+                <center>
+                    <div id="divAreaRestrita" class="panel panel-primary" hidden="true">
+
+                        <br>
+                        <div id="divAdmin" hidden="true">
+                            ADMINISTRADOR:<br><input style="color: black;"  class="text-center" type="text" id="ADM"/><br>
+                            <br>
+                            SENHA:<br><input style="color: black;"  class="text-center" type="password" id="senhaADM" /><br>
+                            <br>
+                            <button class="btn btn-primary" onclick="logarAdmin()">OK</button>
+                            <br>
+                            <br>
+                        </div>
+                        <div id="opcoesRestritas">
+                            <br>
+                            <label>Deseja deletar o Curso e Todas as Informações?</label>
+                            <button class="btn btn-default" onclick="divDeletarCurso()">Deletar Todo o Curso</button>
+                            <br>
+                            <label>Deseja deletar o histórico de todos os alunos?</label>
+                            <button class="btn btn-default" onclick="deletarHistoricosModal()">
+                                Deletar Históricos
+                            </button>
+                        </div>
+                        <br>
+                    </div>
+                    <div id="divDeletarCurso" hidden="true">
+
+                        <label>Deseja Deletar o Curso e Todas as Informações?</label>
+                        <button class="btn btn-default" onclick="deletarCurso()">
+                            Confirmar
+                        </button>
+
+                    </div>
+                </center>
+                <br>
                 <div id="listaDisciplinas" >
 
 

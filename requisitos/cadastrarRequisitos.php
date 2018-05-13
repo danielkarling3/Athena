@@ -177,18 +177,18 @@ include_once '../modal.php';
                 $("#ajuda3").hide();
                 if (i === 1) {
                     $("#ajudaRequisito").attr("disabled", true);
-                    $("#ajuda1").show();
+                    $("#ajuda1").show(500);
                 } else
                 if (i === 2) {
                     
                     $("#ajudaRequisito").attr("disabled", true);
-                    $("#ajuda1").hide();
-                    $("#ajuda2").show();
+                    $("#ajuda1").hide(200);
+                    $("#ajuda2").show(700);
                 } else if (i === 3) {
                 
                     $("#ajudaRequisito").attr("disabled", true);
-                    $("#ajuda2").hide();
-                    $("#ajuda3").show();
+                    $("#ajuda2").hide(200);
+                    $("#ajuda3").show(700);
                 }else{
                     
                     $("#ajudaRequisito").attr("disabled", false);

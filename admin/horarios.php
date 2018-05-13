@@ -80,6 +80,7 @@ foreach ($horarios as $h) {
                 $("#loginAdmin").hide(600);
                 $('#ADM').val('');
                 $('#senhaADM').val('');
+                $("#btnAdmin").show(600);
             } else {
                 alert("Bem vindo, administrador do Sistema Athena ");
                 $("#loginAdmin").hide(300);
