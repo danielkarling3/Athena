@@ -624,36 +624,15 @@ foreach ($fetch as $f) {
 
             <div  class="col-lg-10 col-xs-10">
                 <br><br><br>
-                <div style="margin-left: 90%; padding-right: 2px; padding-top: 2px;">
-                    <button id="btnAdmin" onclick="admin()" class="btn btn-sm btn-default">Área Restrita</button>
-                </div>
+                <?php
+                include_once 'btnAreaRestrita.php';
+                ?>
                 <br>
                 <br>
                 <center>
-                    <div id="divAreaRestrita" class="panel panel-primary" hidden="true">
-
-                        <br>
-                        <div id="divAdmin" hidden="true">
-                            ADMINISTRADOR:<br><input style="color: black;"  class="text-center" type="text" id="ADM"/><br>
-                            <br>
-                            SENHA:<br><input style="color: black;"  class="text-center" type="password" id="senhaADM" /><br>
-                            <br>
-                            <button class="btn btn-primary" onclick="logarAdmin()">OK</button>
-                            <br>
-                            <br>
-                        </div>
-                        <div id="opcoesRestritas">
-                            <br>
-                            <label>Deseja deletar o Curso e Todas as Informações?</label>
-                            <button class="btn btn-default" onclick="divDeletarCurso()">Deletar Todo o Curso</button>
-                            <br>
-                            <label>Deseja deletar o histórico de todos os alunos?</label>
-                            <button class="btn btn-default" onclick="deletarHistoricosModal()">
-                                Deletar Históricos
-                            </button>
-                        </div>
-                        <br>
-                    </div>
+                   <?php
+                   include_once 'areaRestrita.php';
+                   ?>
                     <div id="divDeletarCurso" hidden="true">
 
                         <label>Deseja Deletar o Curso e Todas as Informações?</label>
