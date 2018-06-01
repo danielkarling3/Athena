@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 15-Mar-2018 às 22:00
+-- Generation Time: 01-Jun-2018 às 03:08
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -19,6 +19,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `aproveitamento`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ADM`
+--
+
+CREATE TABLE `ADM` (
+  `id` int(11) NOT NULL,
+  `user` varchar(20) NOT NULL,
+  `senha` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `ADM`
+--
+
+INSERT INTO `ADM` (`id`, `user`, `senha`) VALUES
+(0, 'admin', 'athena123'),
 
 -- --------------------------------------------------------
 
@@ -52,999 +71,153 @@ CREATE TABLE `aproveitamento` (
   `id_curso` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
 --
--- Extraindo dados da tabela `aproveitamento`
+-- Estrutura da tabela `compartilhado`
 --
 
-INSERT INTO `aproveitamento` (`ID`, `NOME_PESSOA`, `MATR_ALUNO`, `NUM_VERSAO`, `NOME_CURSO`, `COD_CURSO`, `ID_VERSAO_CURSO`, `ANO`, `COD_ATIV_CURRIC`, `NOME_ATIV_CURRIC`, `MEDIA_FINAL`, `DESCR_SITUACAO`, `PERIODO`, `ID_CURSO_ALUNO`, `SITUACAO_ITEM`, `CH_TEORICA`, `CH_PRATICA`, `TOTAL_CARGA_HORARIA`, `ANO_INGRESSO`, `FORMA_EVASAO`, `ANO_EVASAO`, `SEXO`, `id_curso`) VALUES
-(3732, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 86, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3733, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE048', 'COMPUTADORES E SOCIEDADE', 88, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3734, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3735, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE040', 'MATEM??TICA I', 89, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3736, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 96, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3737, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 82, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3738, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 91, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3739, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 100, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3740, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 87, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3741, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE041', 'MATEM??TICA II', 84, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3742, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 83, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3743, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 97, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3744, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 95, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3745, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 86, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3746, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 92, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3747, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE042', 'MATEM??TICA III', 92, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3748, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE051', 'SISTEMAS OPERACIONAIS', 86, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3749, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH013', 'DID??TICA', 92, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3750, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 84, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3751, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE043', 'MATEM??TICA IV', 94, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3752, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 86, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3753, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3754, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE058', 'DESENVOLVIMENTO DE SISTEMAS BASEADOS NA WEB', 96, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3755, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH014', 'DID??TICA DA COMPUTA?‡?ƒO', 96, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3756, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH016', 'EST??GIO SUPERVISIONADO DE DOC??NCIA I', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3757, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE044', 'MATEM??TICA V', 88, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3758, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3759, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE057', 'PROJETO DE SOFTWARE', 82, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3763, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH017', 'EST??GIO SUPEVISIONADO DE DOC??NCIA II', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3769, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 95, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3770, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE059', 'INTELIG??NCIA ARTIFICIAL', 96, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3771, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE060', 'INTERA?‡?ƒO HUMANO COMPUTADOR', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3777, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH019', 'PR??TICA PEDAG?“GICA DO ENSINO DE COMPUTA?‡?ƒO I', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3780, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 77, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3781, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH021', 'EST??GIO SUPERVISIONADO DE DOC??NCIA EM COMPUTA?‡?ƒO I', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 126, 0, '', 0, '', 1),
-(3782, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH020', 'PR??TICA PEDAG?“GICA DO ENSINO DE COMPUTA?‡?ƒO II', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3783, '257846', 'GRR20145680', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE061', 'SISTEMAS MULTIM??DIA', 87, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3790, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3791, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE048', 'COMPUTADORES E SOCIEDADE', 88, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3792, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 79, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3794, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE040', 'MATEM??TICA I', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3796, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 88, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3798, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 94, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3799, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 89, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3800, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 91, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3801, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 77, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3803, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE041', 'MATEM??TICA II', 66, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3804, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 76, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3805, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 82, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3806, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3808, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 74, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3809, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3811, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE042', 'MATEM??TICA III', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3813, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE051', 'SISTEMAS OPERACIONAIS', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3814, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH013', 'DID??TICA', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3816, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 88, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3817, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE043', 'MATEM??TICA IV', 80, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3818, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 88, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3819, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 92, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3820, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE058', 'DESENVOLVIMENTO DE SISTEMAS BASEADOS NA WEB', 91, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3821, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH014', 'DID??TICA DA COMPUTA?‡?ƒO', 93, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3822, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH016', 'EST??GIO SUPERVISIONADO DE DOC??NCIA I', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3823, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE044', 'MATEM??TICA V', 81, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3824, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3825, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE057', 'PROJETO DE SOFTWARE', 82, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3829, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH017', 'EST??GIO SUPEVISIONADO DE DOC??NCIA II', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3831, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3832, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE059', 'INTELIG??NCIA ARTIFICIAL', 95, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3833, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE060', 'INTERA?‡?ƒO HUMANO COMPUTADOR', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3834, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH019', 'PR??TICA PEDAG?“GICA DO ENSINO DE COMPUTA?‡?ƒO I', 85, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3836, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 87, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3837, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH021', 'EST??GIO SUPERVISIONADO DE DOC??NCIA EM COMPUTA?‡?ƒO I', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 126, 0, '', 0, '', 1),
-(3839, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH020', 'PR??TICA PEDAG?“GICA DO ENSINO DE COMPUTA?‡?ƒO II', 91, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3840, '258226', 'GRR20146060', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE061', 'SISTEMAS MULTIM??DIA', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3849, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3850, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE048', 'COMPUTADORES E SOCIEDADE', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3851, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3852, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE040', 'MATEM??TICA I', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3853, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 93, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3854, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 93, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3856, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 100, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3857, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 89, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3859, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3861, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3862, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3863, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3864, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE041', 'MATEM??TICA II', 55, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3865, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 81, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3866, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 89, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3867, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE042', 'MATEM??TICA III', 27, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3868, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3869, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE051', 'SISTEMAS OPERACIONAIS', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3870, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3871, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 96, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3872, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH014', 'DID??TICA DA COMPUTA?‡?ƒO', 95, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3873, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3874, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE042', 'MATEM??TICA III', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3875, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 76, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3878, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 93, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3879, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 94, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3882, '258815', 'GRR20146649', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE043', 'MATEM??TICA IV', 65, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3890, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 0, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3891, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE048', 'COMPUTADORES E SOCIEDADE', 0, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 54, 0, '', 0, '', 1),
-(3894, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 22, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(3895, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3897, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 25, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(3898, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 9, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3899, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE041', 'MATEM??TICA II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(3900, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2014, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3901, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 9, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3902, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 15, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(3903, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 32, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(3904, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3905, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(3906, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH013', 'DID??TICA', 40, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(3907, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 82, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3908, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3909, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 18, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(3910, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 7, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3911, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 81, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3912, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3913, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3914, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 25, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3915, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE051', 'SISTEMAS OPERACIONAIS', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3916, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 80, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3917, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 74, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3918, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE053', 'GEOMETRIA ANAL??TICA', 4, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(3919, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 58, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3920, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(3921, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 58, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3922, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 4, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3923, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE051', 'SISTEMAS OPERACIONAIS', 21, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3924, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3925, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(3926, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 25, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3927, '258994', 'GRR20146715', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE061', 'SISTEMAS MULTIM??DIA', 80, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3928, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 23, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3929, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 74, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3930, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 85, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3931, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 29, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3932, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 26, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(3933, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3934, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 34, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3935, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'EER008', 'ALGORITMOS E PROGRAMA?‡?ƒO DE COMPUTADORES', 31, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(3936, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 56, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3937, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE041', 'MATEM??TICA II', 25, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(3938, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 21, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3939, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3940, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 44, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3941, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3942, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 36, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3943, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 14, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3944, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 30, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3945, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 76, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3946, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 37, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3947, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 47, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(3949, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 85, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3950, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 74, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3951, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3952, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3953, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3955, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 37, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3956, '273898', 'GRR20150625', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 52, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3964, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 25, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3965, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 86, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3966, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3967, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 33, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3968, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 43, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(3969, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 60, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3971, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3972, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE041', 'MATEM??TICA II', 2, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(3973, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 2, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3974, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 83, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3975, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 2, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3976, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3977, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 44, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3978, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 7, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3980, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3981, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(3982, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3983, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 17, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3984, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 11, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(3985, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(3986, '265041', 'GRR20150632', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(3991, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3992, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(3993, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 88, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3994, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3995, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(3996, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 74, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(3997, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 38, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(3998, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 85, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(3999, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE041', 'MATEM??TICA II', 27, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4000, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4001, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 85, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4002, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4003, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 93, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4004, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4005, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4006, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE051', 'SISTEMAS OPERACIONAIS', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4007, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 73, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4008, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 74, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4009, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 75, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4010, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 53, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4011, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 82, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4012, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4013, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4014, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE058', 'DESENVOLVIMENTO DE SISTEMAS BASEADOS NA WEB', 91, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4015, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH014', 'DID??TICA DA COMPUTA?‡?ƒO', 91, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4016, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4018, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 82, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4019, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE059', 'INTELIG??NCIA ARTIFICIAL', 51, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4021, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE042', 'MATEM??TICA III', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4024, '265259', 'GRR20150850', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE061', 'SISTEMAS MULTIM??DIA', 89, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4029, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 81, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4030, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 91, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4031, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4032, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 86, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4033, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1);
-INSERT INTO `aproveitamento` (`ID`, `NOME_PESSOA`, `MATR_ALUNO`, `NUM_VERSAO`, `NOME_CURSO`, `COD_CURSO`, `ID_VERSAO_CURSO`, `ANO`, `COD_ATIV_CURRIC`, `NOME_ATIV_CURRIC`, `MEDIA_FINAL`, `DESCR_SITUACAO`, `PERIODO`, `ID_CURSO_ALUNO`, `SITUACAO_ITEM`, `CH_TEORICA`, `CH_PRATICA`, `TOTAL_CARGA_HORARIA`, `ANO_INGRESSO`, `FORMA_EVASAO`, `ANO_EVASAO`, `SEXO`, `id_curso`) VALUES
-(4034, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 74, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4035, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4036, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 86, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4037, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE041', 'MATEM??TICA II', 51, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4038, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4039, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4040, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 79, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4041, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4042, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4043, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4044, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE042', 'MATEM??TICA III', 56, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4045, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE051', 'SISTEMAS OPERACIONAIS', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4046, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 78, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4047, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 87, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4048, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE053', 'GEOMETRIA ANAL??TICA', 79, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4049, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE043', 'MATEM??TICA IV', 52, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4050, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 82, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4051, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 95, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4052, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE058', 'DESENVOLVIMENTO DE SISTEMAS BASEADOS NA WEB', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4053, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH014', 'DID??TICA DA COMPUTA?‡?ƒO', 89, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4054, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH016', 'EST??GIO SUPERVISIONADO DE DOC??NCIA I', 85, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4055, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE044', 'MATEM??TICA V', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4056, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4057, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE057', 'PROJETO DE SOFTWARE', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4058, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH017', 'EST??GIO SUPEVISIONADO DE DOC??NCIA II', 94, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4060, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 80, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4061, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE059', 'INTELIG??NCIA ARTIFICIAL', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4062, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE060', 'INTERA?‡?ƒO HUMANO COMPUTADOR', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4066, '265439', 'GRR20151030', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH019', 'PR??TICA PEDAG?“GICA DO ENSINO DE COMPUTA?‡?ƒO I', 92, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4073, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4074, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4075, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4076, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 53, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4077, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 67, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4078, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 64, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4079, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 95, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4080, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 82, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4081, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE041', 'MATEM??TICA II', 51, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4082, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 85, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4083, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 52, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4084, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4085, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 44, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4086, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4087, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4088, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE042', 'MATEM??TICA III', 9, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4089, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE051', 'SISTEMAS OPERACIONAIS', 54, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4090, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 81, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4091, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 75, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4092, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE053', 'GEOMETRIA ANAL??TICA', 57, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4093, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4094, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 81, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4095, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE058', 'DESENVOLVIMENTO DE SISTEMAS BASEADOS NA WEB', 95, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4096, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH014', 'DID??TICA DA COMPUTA?‡?ƒO', 78, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4097, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH016', 'EST??GIO SUPERVISIONADO DE DOC??NCIA I', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4098, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4099, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE057', 'PROJETO DE SOFTWARE', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4100, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH017', 'EST??GIO SUPEVISIONADO DE DOC??NCIA II', 95, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4102, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 56, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4103, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE059', 'INTELIG??NCIA ARTIFICIAL', 73, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4104, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE060', 'INTERA?‡?ƒO HUMANO COMPUTADOR', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4108, '273955', 'GRR20151298', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH019', 'PR??TICA PEDAG?“GICA DO ENSINO DE COMPUTA?‡?ƒO I', 82, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4115, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 45, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4116, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 88, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4117, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 96, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4118, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 43, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4119, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 18, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4120, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 66, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4121, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 85, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4123, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 22, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4124, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 92, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4125, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 20, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4126, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 25, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4127, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 23, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4128, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 13, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4130, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4131, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 88, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4132, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4133, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 92, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4134, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 18, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4136, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 27, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4137, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 9, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4140, '266101', 'GRR20151692', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE061', 'SISTEMAS MULTIM??DIA', 77, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4141, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 5, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4142, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 57, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4143, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 52, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4144, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 4, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4145, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 2, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(4146, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 59, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4148, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4149, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4150, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4151, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 2, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4152, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4153, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 45, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4154, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4155, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 32, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4156, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 7, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4157, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4158, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 40, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4159, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 30, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4160, '266456', 'GRR20152047', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 58, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4165, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 93, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4166, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 92, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4167, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4168, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4169, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 30, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4170, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4171, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 64, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4172, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 91, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4173, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE041', 'MATEM??TICA II', 3, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4174, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4175, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 84, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4176, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4178, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4179, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 92, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4180, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE051', 'SISTEMAS OPERACIONAIS', 65, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4181, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 80, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4182, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 87, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4183, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 76, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4184, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 98, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4185, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 85, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4186, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE058', 'DESENVOLVIMENTO DE SISTEMAS BASEADOS NA WEB', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4187, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH014', 'DID??TICA DA COMPUTA?‡?ƒO', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4188, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 35, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4189, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE057', 'PROJETO DE SOFTWARE', 86, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4191, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE059', 'INTELIG??NCIA ARTIFICIAL', 47, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4192, '266662', 'GRR20152253', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4199, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4200, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 88, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4201, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 95, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4202, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 46, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4203, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 5, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4204, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4205, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 75, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4206, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 83, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4207, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE041', 'MATEM??TICA II', 33, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4208, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 84, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4209, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 97, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4210, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4212, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4213, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 93, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4214, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 35, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4215, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE051', 'SISTEMAS OPERACIONAIS', 69, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4216, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 88, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4217, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 83, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4218, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE053', 'GEOMETRIA ANAL??TICA', 50, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4219, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 51, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4220, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 92, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4221, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 92, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4222, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE058', 'DESENVOLVIMENTO DE SISTEMAS BASEADOS NA WEB', 94, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4223, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH014', 'DID??TICA DA COMPUTA?‡?ƒO', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4224, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 40, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4225, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE057', 'PROJETO DE SOFTWARE', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4226, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 65, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4227, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE059', 'INTELIG??NCIA ARTIFICIAL', 46, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4228, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 73, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4229, '267631', 'GRR20153222', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE061', 'SISTEMAS MULTIM??DIA', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4234, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 17, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4235, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 54, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4236, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 52, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4237, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 15, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4238, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 4, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4239, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 14, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4241, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 80, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4242, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 33, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(4243, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4244, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4245, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 39, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4246, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 16, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4247, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 50, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4248, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 75, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4249, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 39, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4250, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 60, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4251, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4252, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 86, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4253, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 52, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4254, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 20, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4255, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4256, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 40, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4257, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 60, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4258, '268206', 'GRR20153797', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE061', 'SISTEMAS MULTIM??DIA', 3, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 54, 0, '', 0, '', 1),
-(4263, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 23, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4264, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 92, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4265, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4266, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 51, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4267, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 56, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4268, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4269, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 32, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4270, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 74, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4271, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE041', 'MATEM??TICA II', 0, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4272, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 32, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4273, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 94, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4274, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 51, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4275, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4276, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4277, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4278, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE051', 'SISTEMAS OPERACIONAIS', 51, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4279, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 38, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4280, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 81, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4281, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE041', 'MATEM??TICA II', 12, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4282, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 36, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4283, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4284, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH014', 'DID??TICA DA COMPUTA?‡?ƒO', 89, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4285, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 8, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4286, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH019', 'PR??TICA PEDAG?“GICA DO ENSINO DE COMPUTA?‡?ƒO I', 85, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4287, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4290, '268421', 'GRR20154012', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 66, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4296, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 52, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4297, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4298, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4299, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 29, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4300, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 26, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4301, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4302, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 25, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4303, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 83, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4304, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE041', 'MATEM??TICA II', 25, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4305, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4306, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 73, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4307, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 13, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1);
-INSERT INTO `aproveitamento` (`ID`, `NOME_PESSOA`, `MATR_ALUNO`, `NUM_VERSAO`, `NOME_CURSO`, `COD_CURSO`, `ID_VERSAO_CURSO`, `ANO`, `COD_ATIV_CURRIC`, `NOME_ATIV_CURRIC`, `MEDIA_FINAL`, `DESCR_SITUACAO`, `PERIODO`, `ID_CURSO_ALUNO`, `SITUACAO_ITEM`, `CH_TEORICA`, `CH_PRATICA`, `TOTAL_CARGA_HORARIA`, `ANO_INGRESSO`, `FORMA_EVASAO`, `ANO_EVASAO`, `SEXO`, `id_curso`) VALUES
-(4308, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4309, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 78, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4310, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4311, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 66, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4312, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE041', 'MATEM??TICA II', 37, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4313, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 53, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4314, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4315, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4316, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4317, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE042', 'MATEM??TICA III', 7, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4318, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE051', 'SISTEMAS OPERACIONAIS', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4319, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4320, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE235', 'EMPREENDEDORISMO E INOVA?‡?ƒO', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4321, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 81, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4322, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 21, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4323, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE060', 'INTERA?‡?ƒO HUMANO COMPUTADOR', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4324, '268971', 'GRR20154562', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 86, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4330, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 27, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4331, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4332, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4333, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 40, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4334, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 23, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4335, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 52, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4336, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 82, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4337, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 22, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4338, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 94, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4339, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 50, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4340, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4341, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4342, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 4, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4343, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 6, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4344, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE041', 'MATEM??TICA II', 27, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4345, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 31, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4346, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4347, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 18, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4348, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4349, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4350, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4351, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 34, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4353, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4354, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 9, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4357, '273177', 'GRR20158346', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE061', 'SISTEMAS MULTIM??DIA', 80, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4362, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 15, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4363, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE048', 'COMPUTADORES E SOCIEDADE', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4364, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 51, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4365, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 10, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4366, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE040', 'MATEM??TICA I', 2, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4367, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 33, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4368, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH013', 'DID??TICA', 85, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4369, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 72, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4370, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 5, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4371, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 53, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4372, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2015, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4373, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 5, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4374, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 2, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4375, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4376, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 14, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 54, 0, '', 0, '', 1),
-(4377, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4378, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 6, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4379, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 4, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 72, 0, '', 0, '', 1),
-(4380, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 30, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4381, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 62, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4382, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 13, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4383, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 5, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4384, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(4385, '275008', 'GRR20159217', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4386, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 23, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4387, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4390, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4391, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 5, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4392, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 14, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4395, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 84, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4396, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4397, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4398, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 74, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4399, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4400, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4401, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4402, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 37, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4403, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 21, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4404, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 53, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4405, '277030', 'GRR20160011', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 58, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4411, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4412, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 79, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4413, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4414, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4415, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 54, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4416, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4417, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 50, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4418, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 88, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4419, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE041', 'MATEM??TICA II', 60, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4420, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 88, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4421, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 83, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4422, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4423, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 62, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4424, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4425, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4426, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE042', 'MATEM??TICA III', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4427, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE051', 'SISTEMAS OPERACIONAIS', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4428, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4429, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE235', 'EMPREENDEDORISMO E INOVA?‡?ƒO', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4430, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4431, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 92, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4432, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE043', 'MATEM??TICA IV', 58, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4433, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 58, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4434, '282140', 'GRR20161522', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 83, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4441, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 2, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4442, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 50, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4443, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 32, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4444, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 8, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4445, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4446, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 26, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 54, 0, '', 0, '', 1),
-(4447, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4448, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 22, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4449, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE041', 'MATEM??TICA II', 7, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4450, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 30, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4451, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 8, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4452, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 35, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4453, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 60, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4454, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4455, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4456, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4457, '278668', 'GRR20161525', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4462, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 12, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4463, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4464, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 33, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4465, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 8, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4466, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 17, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4467, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 21, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 54, 0, '', 0, '', 1),
-(4468, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4469, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 78, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4470, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE041', 'MATEM??TICA II', 10, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4471, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 12, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4472, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 95, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4473, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 55, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4474, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4475, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 25, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4476, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4477, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 11, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4478, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 86, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4479, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 53, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4480, '280468', 'GRR20161530', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 1, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4486, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 82, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4487, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4488, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4489, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4490, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 24, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4491, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4492, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 3, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4493, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 78, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4494, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4495, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH056', 'LIBRAS B??SICA', 88, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4496, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 38, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4497, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 85, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4498, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 69, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4499, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 63, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4500, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH032', 'LEITURA DIRIGIDA DE PAULO FREIRE', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4501, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 89, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4502, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4503, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 73, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4504, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE235', 'EMPREENDEDORISMO E INOVA?‡?ƒO', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4505, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4506, '282598', 'GRR20165230', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 11, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4511, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 78, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4512, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 94, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4513, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4514, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 82, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4515, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 81, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4516, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 85, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4517, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4518, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4519, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 92, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4520, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE041', 'MATEM??TICA II', 62, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4521, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 93, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4522, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 78, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4523, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE047', 'ALGORITMOS E ESTRUTURAS DE DADOS III', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4524, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4525, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 78, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4526, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4527, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE042', 'MATEM??TICA III', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4528, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE051', 'SISTEMAS OPERACIONAIS', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4529, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4530, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 59, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4531, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE043', 'MATEM??TICA IV', 67, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4532, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE055', 'PROGRAMA?‡?ƒO ORIENTADA A OBJETOS', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4533, '282388', 'GRR20165506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 81, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4541, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4542, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 53, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4543, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4544, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4545, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4546, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 44, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 54, 0, '', 0, '', 1),
-(4547, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 41, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4548, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 37, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4549, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE042', 'MATEM??TICA II', 23, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4550, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 33, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4551, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 75, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4553, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 23, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4554, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 20, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4555, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4556, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 27, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4557, '284614', 'GRR20167412', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE051', 'SISTEMAS OPERACIONAIS', 24, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4561, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 37, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4562, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 88, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4563, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 93, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4564, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 56, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4565, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 15, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4566, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4567, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 3, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4568, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4569, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4570, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH056', 'LIBRAS B??SICA', 88, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4571, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 22, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4572, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 82, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4573, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 50, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4574, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 13, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4575, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 78, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4576, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH032', 'LEITURA DIRIGIDA DE PAULO FREIRE', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4577, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 81, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4578, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 12, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1);
-INSERT INTO `aproveitamento` (`ID`, `NOME_PESSOA`, `MATR_ALUNO`, `NUM_VERSAO`, `NOME_CURSO`, `COD_CURSO`, `ID_VERSAO_CURSO`, `ANO`, `COD_ATIV_CURRIC`, `NOME_ATIV_CURRIC`, `MEDIA_FINAL`, `DESCR_SITUACAO`, `PERIODO`, `ID_CURSO_ALUNO`, `SITUACAO_ITEM`, `CH_TEORICA`, `CH_PRATICA`, `TOTAL_CARGA_HORARIA`, `ANO_INGRESSO`, `FORMA_EVASAO`, `ANO_EVASAO`, `SEXO`, `id_curso`) VALUES
-(4579, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 79, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4580, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE235', 'EMPREENDEDORISMO E INOVA?‡?ƒO', 72, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4581, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 29, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4582, '284122', 'GRR20167420', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 12, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4587, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 13, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4588, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 89, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4589, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 76, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4590, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 50, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4591, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 20, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4592, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 81, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4593, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4594, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 79, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4595, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 50, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4596, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 19, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4597, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 50, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4598, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 54, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4599, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 10, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4600, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4601, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4602, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4603, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 88, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4604, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 2, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4605, '284021', 'GRR20167449', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 39, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4609, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 11, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4610, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 51, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4611, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 36, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4612, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 37, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4613, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 7, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4614, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 34, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4619, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 48, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4620, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4621, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4623, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4624, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4625, '284399', 'GRR20167499', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4629, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 3, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4630, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 36, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 54, 0, '', 0, '', 1),
-(4631, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 47, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4632, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 1, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4633, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4634, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 36, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 54, 0, '', 0, '', 1),
-(4636, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4637, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4638, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 6, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4639, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 56, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4640, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 1, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4641, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4642, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4643, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4644, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4645, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4646, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4647, '284621', 'GRR20167506', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4649, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 21, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4650, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4651, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 95, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4652, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 54, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4653, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 10, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4654, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 64, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4655, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 72, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4656, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 79, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4657, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 77, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4658, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 75, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4659, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 84, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4660, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4661, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 59, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4662, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4663, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH032', 'LEITURA DIRIGIDA DE PAULO FREIRE', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4664, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 97, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4665, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 50, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4666, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 73, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4667, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4668, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 74, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4669, '284272', 'GRR20167512', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH019', 'PR??TICA PEDAG?“GICA DO ENSINO DE COMPUTA?‡?ƒO I', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(4674, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 8, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4675, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 51, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4676, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4677, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 61, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4678, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 5, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4679, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 20, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4680, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 50, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4681, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH013', 'DID??TICA', 75, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4682, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 78, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4683, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 57, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4684, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH056', 'LIBRAS B??SICA', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4685, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 72, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4686, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 77, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4687, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 67, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4688, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4689, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4690, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 21, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4691, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE054', 'FUNDAMENTOS DE REDES E SISTEMAS DISTRIBU??DOS', 19, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4692, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 48, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4693, '284538', 'GRR20167537', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 62, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4699, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 4, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4700, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4701, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4702, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 17, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4703, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 4, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4704, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4705, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 85, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4706, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 77, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4707, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH056', 'LIBRAS B??SICA', 90, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4708, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4709, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 80, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4710, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 45, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4711, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 51, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4712, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH032', 'LEITURA DIRIGIDA DE PAULO FREIRE', 100, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4713, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 27, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4714, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 1, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4715, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 56, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4716, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE235', 'EMPREENDEDORISMO E INOVA?‡?ƒO', 77, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 72, 0, '', 0, '', 1),
-(4717, '284589', 'GRR20167565', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 6, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4723, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4724, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4725, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 82, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4726, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 63, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4727, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 25, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4728, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4729, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 37, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4730, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 88, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4731, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 91, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4732, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 33, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4733, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 78, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4734, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4735, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 78, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4736, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 90, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4737, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH015', 'PR??TICA PEDAG?“GICA INTERDISCIPLINAR', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4738, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 17, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4739, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 40, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4741, '284336', 'GRR20167693', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 3, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4745, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 5, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4746, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 57, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4747, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 50, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4748, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 23, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4749, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4750, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 57, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4751, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4752, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 50, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4753, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH056', 'LIBRAS B??SICA', 92, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4754, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 10, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4755, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 50, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4756, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 40, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4757, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 32, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4758, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 3, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4759, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 32, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4760, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4761, '284541', 'GRR20167708', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE056', 'SISTEMAS DE BANCO DE DADOS', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(4767, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 46, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4768, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE048', 'COMPUTADORES E SOCIEDADE', 98, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4769, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 79, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4770, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 14, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4771, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE040', 'MATEM??TICA I', 11, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4772, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4774, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH011', '?‰TICA E EDUCA?‡?ƒO', 78, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4775, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4776, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 32, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4777, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2016, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 74, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4778, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4779, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 51, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4780, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 51, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4781, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4782, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4783, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4784, '284398', 'GRR20167741', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4789, '293475', 'GRR20173753', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 37, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4790, '293475', 'GRR20173753', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 25, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4791, '293475', 'GRR20173753', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 52, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4792, '293475', 'GRR20173753', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 12, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4793, '293475', 'GRR20173753', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 14, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4794, '293475', 'GRR20173753', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 32, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4795, '293475', 'GRR20173753', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 3, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4796, '293475', 'GRR20173753', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 7, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4797, '293475', 'GRR20173753', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4803, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 97, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4804, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 84, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4805, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 53, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4806, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 74, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4807, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 88, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4808, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 83, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4809, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 58, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4810, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 95, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4811, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 51, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4812, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 2, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4813, '291637', 'GRR20173756', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4820, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4821, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 68, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4822, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 86, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4823, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4824, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4825, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 80, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4826, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 48, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4827, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 80, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4828, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 66, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4829, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 2, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4830, '292993', 'GRR20173757', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 62, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4837, '291210', 'GRR20173762', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 1, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4838, '291210', 'GRR20173762', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 32, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4839, '291210', 'GRR20173762', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 8, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4840, '291210', 'GRR20173762', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 10, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4841, '291210', 'GRR20173762', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4842, '291210', 'GRR20173762', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 18, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4843, '291210', 'GRR20173762', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4844, '291210', 'GRR20173762', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4845, '291210', 'GRR20173762', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH019', 'PR??TICA PEDAG?“GICA DO ENSINO DE COMPUTA?‡?ƒO I', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(4846, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 16, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4847, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 56, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4848, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 25, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4849, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 23, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4850, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 32, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4851, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 64, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4852, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 23, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4853, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4854, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 9, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4855, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 28, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4856, '289877', 'GRR20173764', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE061', 'SISTEMAS MULTIM??DIA', 3, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 54, 0, '', 0, '', 1),
-(4861, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 52, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4862, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 64, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4863, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 57, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4864, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 55, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1);
-INSERT INTO `aproveitamento` (`ID`, `NOME_PESSOA`, `MATR_ALUNO`, `NUM_VERSAO`, `NOME_CURSO`, `COD_CURSO`, `ID_VERSAO_CURSO`, `ANO`, `COD_ATIV_CURRIC`, `NOME_ATIV_CURRIC`, `MEDIA_FINAL`, `DESCR_SITUACAO`, `PERIODO`, `ID_CURSO_ALUNO`, `SITUACAO_ITEM`, `CH_TEORICA`, `CH_PRATICA`, `TOTAL_CARGA_HORARIA`, `ANO_INGRESSO`, `FORMA_EVASAO`, `ANO_EVASAO`, `SEXO`, `id_curso`) VALUES
-(4865, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 42, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4866, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4867, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 19, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4868, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4869, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 18, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4870, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4871, '292281', 'GRR20173769', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 58, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4877, '292963', 'GRR20173910', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4878, '292963', 'GRR20173910', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 52, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4879, '292963', 'GRR20173910', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 12, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4880, '292963', 'GRR20173910', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4881, '292963', 'GRR20173910', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4882, '292963', 'GRR20173910', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 22, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4883, '292963', 'GRR20173910', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4884, '292963', 'GRR20173910', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4885, '292963', 'GRR20173910', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4892, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 66, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4893, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 79, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4894, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4895, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4896, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 74, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4897, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 85, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4898, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 3, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4899, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 70, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4900, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 19, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4901, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 77, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4902, '296572', 'GRR20177372', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 72, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4909, '296202', 'GRR20177373', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4910, '296202', 'GRR20177373', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 32, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 54, 0, '', 0, '', 1),
-(4911, '296202', 'GRR20177373', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 72, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4912, '296202', 'GRR20177373', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 24, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4913, '296202', 'GRR20177373', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 74, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4914, '296202', 'GRR20177373', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 75, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4917, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 81, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4918, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 85, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4919, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 77, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4920, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4921, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 97, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4922, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 87, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4923, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 61, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4924, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 80, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4925, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 72, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4926, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 72, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 90, 0, '', 0, '', 1),
-(4927, '296151', 'GRR20177374', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 71, 'Aprovado', '2o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4934, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 12, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4935, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 60, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4936, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 50, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4937, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 7, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4938, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 18, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4939, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 65, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4940, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4941, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4942, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4943, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4944, '296548', 'GRR20177376', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4945, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4946, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4947, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4948, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4949, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 8, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4950, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4951, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE052', 'ESTAT??STICA E PROBABILIDADE', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4952, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 5, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4953, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH012', 'HIST?“RIA, FILOSOFIA E ENSINO DAS CI??NCIAS', 6, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 36, 0, '', 0, '', 1),
-(4954, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4955, '296349', 'GRR20177377', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 30, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4962, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 17, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4963, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4964, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4965, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 18, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4966, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 29, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4967, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 62, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4968, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE046', 'ALGORITMOS E ESTRUTURAS DE DADOS II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4969, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 40, 'Reprovado ', '2o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4970, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4971, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE049', 'OFICINA DE COMPUTA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4972, '296184', 'GRR20177378', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 28, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4977, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4978, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 4, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 54, 0, '', 0, '', 1),
-(4979, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 59, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4980, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 1, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4981, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4982, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4983, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4984, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4985, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4986, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 2, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4987, '296199', 'GRR20177381', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 3, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4988, '296222', 'GRR20177382', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 21, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4989, '296222', 'GRR20177382', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE048', 'COMPUTADORES E SOCIEDADE', 70, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4990, '296222', 'GRR20177382', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH008', 'FUNDAMENTOS DA EDUCA?‡?ƒO', 71, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 36, 0, '', 0, '', 1),
-(4991, '296222', 'GRR20177382', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE090', 'INTRODU?‡?ƒO ?€ L?“GICA', 17, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4992, '296222', 'GRR20177382', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE040', 'MATEM??TICA I', 44, 'Reprovado ', '1o. Semestre', 0, 2, 0, 0, 90, 0, '', 0, '', 1),
-(4993, '296222', 'GRR20177382', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH009', 'PSICOLOGIA DA EDUCA?‡?ƒO', 73, 'Aprovado', '1o. Semestre', 0, 1, 0, 0, 54, 0, '', 0, '', 1),
-(4994, '296222', 'GRR20177382', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH055', 'COMUNICA?‡?ƒO EM L??NGUA BRASILEIRA DE SINAIS - LIBRAS', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4995, '296222', 'GRR20177382', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE050', 'FUNDAMENTOS DE ARQUITETURA DE COMPUTADORES', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(4996, '296222', 'GRR20177382', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH010', 'POL??TICAS EDUCACIONAIS E GEST?ƒO ESCOLAR', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(4997, '296042', 'GRR20177383', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE045', 'ALGORITMOS E ESTRUTURA DE DADOS I', 1, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1),
-(5002, '296042', 'GRR20177383', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE053', 'GEOMETRIA ANAL??TICA', 0, 'Reprovado ', '1o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(5007, '296042', 'GRR20177383', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH013', 'DID??TICA', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 36, 0, '', 0, '', 1),
-(5008, '296042', 'GRR20177383', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DSH018', 'INFORM??TICA E EDUCA?‡?ƒO', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 72, 0, '', 0, '', 1),
-(5009, '296042', 'GRR20177383', 1467, 'Curso de Licenciatura em Computa?§?£o - Palotina - Noturno', '156A', 2016, 2017, 'DEE041', 'MATEM??TICA II', 0, 'Reprovado ', '2o. Semestre', 0, 3, 0, 0, 90, 0, '', 0, '', 1);
+CREATE TABLE `compartilhado` (
+  `id` int(11) NOT NULL,
+  `id_curso` int(11) NOT NULL,
+  `id_compartilhado` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+--
+-- Estrutura da tabela `curso`
+--
+
+CREATE TABLE `curso` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(15) NOT NULL,
+  `nome` text NOT NULL,
+  `semanas` int(11) NOT NULL,
+  `cargaHoraria` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `id_periodo` int(11) NOT NULL,
+  `visivel` int(11) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `disciplina`
+--
+
+CREATE TABLE `disciplina` (
+  `ID` int(11) NOT NULL,
+  `CODIGO` varchar(10) NOT NULL,
+  `NOME` varchar(255) DEFAULT NULL,
+  `categoria` varchar(56) DEFAULT NULL,
+  `curso` text NOT NULL,
+  `TOTAL_CARGA_HORARIA` int(11) NOT NULL,
+  `requisitoCadastrado` int(11) NOT NULL,
+  `requisitada` int(1) NOT NULL DEFAULT '0',
+  `ativa` int(11) NOT NULL,
+  `id_curso` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+--
+-- Estrutura da tabela `disc_horario`
+--
+
+CREATE TABLE `disc_horario` (
+  `id_disciplina` int(11) NOT NULL,
+  `id_horario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+--
+-- Estrutura da tabela `horario`
+--
+
+CREATE TABLE `horario` (
+  `id_horario` int(11) NOT NULL,
+  `hora_inicio` time NOT NULL,
+  `dia` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `horario`
+--
+
+INSERT INTO `horario` (`id_horario`, `hora_inicio`, `dia`) VALUES
+(1, '19:00:00', 'Segunda'),
+(2, '21:00:00', 'Segunda'),
+(3, '19:00:00', 'Terça'),
+(4, '21:00:00', 'Terça'),
+(5, '19:00:00', 'Quarta'),
+(6, '21:00:00', 'Quarta'),
+(7, '19:00:00', 'Quinta'),
+(8, '21:00:00', 'Quinta'),
+(9, '19:00:00', 'Sexta'),
+(10, '21:00:00', 'Sexta'),
+(11, '19:00:00', 'Sábado'),
+(12, '21:00:00', 'Sábado');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `periodo`
+--
+
+CREATE TABLE `periodo` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `periodo`
+--
+
+INSERT INTO `periodo` (`id`, `nome`) VALUES
+(1, 'matutino'),
+(2, 'vespertino'),
+(3, 'noturno'),
+(4, 'integral');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `requisito`
+--
+
+CREATE TABLE `requisito` (
+  `id_disciplina` int(11) NOT NULL,
+  `id_requisito` int(11) NOT NULL,
+  `id_curso` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `senha` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `ADM`
+--
+ALTER TABLE `ADM`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `aproveitamento`
@@ -1054,6 +227,62 @@ ALTER TABLE `aproveitamento`
   ADD KEY `aproveitamento_id_curso` (`id_curso`);
 
 --
+-- Indexes for table `compartilhado`
+--
+ALTER TABLE `compartilhado`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_curso` (`id_curso`),
+  ADD KEY `fk_usuario` (`id_compartilhado`);
+
+--
+-- Indexes for table `curso`
+--
+ALTER TABLE `curso`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `codigo` (`codigo`),
+  ADD KEY `fk_curso_has_usuario` (`id_usuario`),
+  ADD KEY `fk_periodo` (`id_periodo`);
+
+--
+-- Indexes for table `disciplina`
+--
+ALTER TABLE `disciplina`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `id_curso` (`id_curso`);
+
+--
+-- Indexes for table `disc_horario`
+--
+ALTER TABLE `disc_horario`
+  ADD PRIMARY KEY (`id_disciplina`,`id_horario`),
+  ADD KEY `chave_estrangeira2` (`id_horario`);
+
+--
+-- Indexes for table `horario`
+--
+ALTER TABLE `horario`
+  ADD PRIMARY KEY (`id_horario`);
+
+--
+-- Indexes for table `periodo`
+--
+ALTER TABLE `periodo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `requisito`
+--
+ALTER TABLE `requisito`
+  ADD PRIMARY KEY (`id_disciplina`,`id_requisito`),
+  ADD KEY `fk_requisito` (`id_requisito`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1061,7 +290,37 @@ ALTER TABLE `aproveitamento`
 -- AUTO_INCREMENT for table `aproveitamento`
 --
 ALTER TABLE `aproveitamento`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5010;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8777;
+--
+-- AUTO_INCREMENT for table `compartilhado`
+--
+ALTER TABLE `compartilhado`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+--
+-- AUTO_INCREMENT for table `curso`
+--
+ALTER TABLE `curso`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1019;
+--
+-- AUTO_INCREMENT for table `disciplina`
+--
+ALTER TABLE `disciplina`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=329;
+--
+-- AUTO_INCREMENT for table `horario`
+--
+ALTER TABLE `horario`
+  MODIFY `id_horario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `periodo`
+--
+ALTER TABLE `periodo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- Constraints for dumped tables
 --
@@ -1071,6 +330,39 @@ ALTER TABLE `aproveitamento`
 --
 ALTER TABLE `aproveitamento`
   ADD CONSTRAINT `aproveitamento_id_curso` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`);
+
+--
+-- Limitadores para a tabela `compartilhado`
+--
+ALTER TABLE `compartilhado`
+  ADD CONSTRAINT `fk_curso` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`),
+  ADD CONSTRAINT `fk_usuario` FOREIGN KEY (`id_compartilhado`) REFERENCES `usuario` (`id`);
+
+--
+-- Limitadores para a tabela `curso`
+--
+ALTER TABLE `curso`
+  ADD CONSTRAINT `fk_curso_has_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_periodo` FOREIGN KEY (`id_periodo`) REFERENCES `periodo` (`id`);
+
+--
+-- Limitadores para a tabela `disciplina`
+--
+ALTER TABLE `disciplina`
+  ADD CONSTRAINT `id_curso` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id`);
+
+--
+-- Limitadores para a tabela `disc_horario`
+--
+ALTER TABLE `disc_horario`
+  ADD CONSTRAINT `chave_estrangeira1` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplina` (`ID`),
+  ADD CONSTRAINT `chave_estrangeira2` FOREIGN KEY (`id_horario`) REFERENCES `horario` (`id_horario`);
+
+--
+-- Limitadores para a tabela `requisito`
+--
+ALTER TABLE `requisito`
+  ADD CONSTRAINT `fk_disc` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplina` (`ID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
